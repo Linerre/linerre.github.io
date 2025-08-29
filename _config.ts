@@ -1,16 +1,14 @@
 import lume from "lume/mod.ts";
-import code_highlight from "lume/plugins/code_highlight.ts";
-import nunjucks from "lume/plugins/nunjucks.ts";
+import plugins from "./plugins.ts";
 
 const site = lume({
     src: "./src",
     server: {
         port: 8090,
     },
-    prettyUrls: false, // Disable pretty urls
+    prettyUrls: false,
 });
 
-site.use(code_highlight());
-site.use(nunjucks());
+site.use(plugins());
 
 export default site;
