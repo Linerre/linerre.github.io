@@ -1,11 +1,12 @@
 import code_highlight from "lume/plugins/code_highlight.ts";
 import nunjucks from "lume/plugins/nunjucks.ts";
 import sitemap from "lume/plugins/sitemap.ts";
-import feed, { Options as FeedOptions } from "lume/plugins/feed.ts";
+import metas from "lume/plugins/metas.ts";
 import icons from "lume/plugins/icons.ts";
+import { merge } from "lume/core/utils/object.ts";
+import feed, { Options as FeedOptions } from "lume/plugins/feed.ts";
 import anchor from "npm:markdown-it-anchor";
 import { footnote } from "npm:@mdit/plugin-footnote";
-import { merge } from "lume/core/utils/object.ts";
 
 import "lume/types.ts";
 
@@ -28,7 +29,8 @@ export default function (userOptions?: Options) {
   const options = merge(defaults, userOptions);
 
     return (site: Lume.Site) => {
-        site.use(sitemap())
+        site.use(metas())
+            .use(sitemap())
             .use(feed(options.feed))
             .add([".css"])
             .preprocess([".md"], (pages) => {
