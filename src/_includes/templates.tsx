@@ -16,8 +16,7 @@ function Base({ children, metas, path}: {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="description" content= {blurb} />
                 <title>errenil</title>
-                <link rel="icon" href="/favicon.png" type="image/png" />
-                <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+                <link rel="icon" href="/img/cat86.gif" type="image/gif" />
                 <link
                     rel="alternate"
                     type="application/rss+xml"
