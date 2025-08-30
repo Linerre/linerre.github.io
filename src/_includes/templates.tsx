@@ -1,5 +1,3 @@
-import { Page as PageData } from 'lume/core/file.ts';
-
 const site_name = 'errenil';
 const site_url = 'https://Linerre.github.io';
 const blurb = 'Errenil notes & thoughts';
@@ -108,10 +106,10 @@ export function Post({title, children, footnotes}: {
     );
 }
 
-export function PostList({posts}: {posts: PageData[]}) {
-    const post_list = posts.map((post: PageData) => {
+export function PostList({posts}: {posts: any[]}) {
+    const post_list = posts.map((post) => {
         return (
-            <li key={post.url}>
+            <li key={post.title}>
                 <Time className="meta" date={post.date} />
                 <h2><a href={post.url}>{post.title}</a></h2>
             </li>

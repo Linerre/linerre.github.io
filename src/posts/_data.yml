@@ -1,0 +1,6 @@
+type: post
+tags: post
+layout: post.tsx
+
+metas:
+  title: "=title"
