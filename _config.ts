@@ -3,6 +3,7 @@ import plugins from "./plugins.ts";
 
 const site = lume({
     src: "./src",
+    cssFile: "/main.css",
     server: {
         port: 8090,
     },

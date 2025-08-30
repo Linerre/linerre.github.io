@@ -1,5 +1,5 @@
+import jsx from "lume/plugins/jsx.ts";
 import code_highlight from "lume/plugins/code_highlight.ts";
-import nunjucks from "lume/plugins/nunjucks.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import metas from "lume/plugins/metas.ts";
 import icons from "lume/plugins/icons.ts";
@@ -34,6 +34,7 @@ export default function (userOptions?: Options) {
         site.use(metas())
             .use(sitemap())
             .use(feed(options.feed))
+            .use(jsx())
             .add([".css"])
             .add("fonts")
             .preprocess([".md"], (pages) => {
