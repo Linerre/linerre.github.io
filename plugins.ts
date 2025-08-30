@@ -10,6 +10,8 @@ import { footnote } from "npm:@mdit/plugin-footnote";
 
 import "lume/types.ts";
 
+const BASE_FONT_URL: string = "https://fonts.google.com/share?selection.family=";
+const ELECTROLIZE: string = "Electrolize";
 export const defaults: Options = {
     feed: {
         output: ["/feed.xml", "/feed.json"],
@@ -33,6 +35,7 @@ export default function (userOptions?: Options) {
             .use(sitemap())
             .use(feed(options.feed))
             .add([".css"])
+            .add("fonts")
             .preprocess([".md"], (pages) => {
             for (const page of pages) {
                 page.data.excerpt ??= (page.data.content as string).split(
