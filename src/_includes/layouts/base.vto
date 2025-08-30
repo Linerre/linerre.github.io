@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html lang="{{ it.lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ it.title || metas.title }} - {{ metas.site }}</title>
+
+    <meta name="supported-color-schemes" content="light dark">
+    <meta name="theme-color" content="hsl(220, 20%, 100%)" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="hsl(220, 20%, 10%)" media="(prefers-color-scheme: dark)">
+
+    <link rel="stylesheet" href="/main.css">
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ metas.site }}">
+    <link rel="alternate" href="/feed.json" type="application/json" title="{{ metas.site }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <link rel="canonical" href="{{ url |> url(true) }}">
+    <script src="/js/main.js" type="module"></script>
+    {{ it.extra_head?.join("\n") }}
+  </head>
+  <body>
+
+    <header>
+      <nav class="navbar">
+        <a href="/" class="sitename">
+          {{ metas.site }}
+        </a>
+
+        {{- for link of it.menu_links }}
+        <a href="{{ link.href }}" {{ if link.target }} target="{{link.target}}"{{ /if }}>
+          {{ link.text }}
+          {{ /for }}
+        </a>
+        <script>
+          let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches
+                                                        ? "dark"
+                                                        : "light");
+          document.documentElement.dataset.theme = theme;
+          function changeTheme() {
+              theme = theme === "dark" ? "light" : "dark";
+              localStorage.setItem("theme", theme);
+              document.documentElement.dataset.theme = theme;
+          }
+        </script>
+        <button class="button" onclick="changeTheme()">
+          <span class="icon">◐</span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="{{ it.bodyClass }}">
+      {{ content }}
+    </main>
+
+    <!-- Current page: {{ url }} -->
+  </body>
+</html>

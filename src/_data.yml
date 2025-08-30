@@ -1,0 +1,14 @@
+menu_links:
+    - text: "About"
+      href: "/about"
+    - text: "Links"
+      href: "/links"
+
+# Metas plugin https://lume.land/plugins/metas/#description
+metas:
+  site: errenil
+  description: General description of the blog
+  title: "=title"
+  image: "=image"
+  twitter: "@giftboiling"
+  lang: en
