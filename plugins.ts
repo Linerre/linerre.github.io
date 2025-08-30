@@ -5,9 +5,8 @@ import metas from "lume/plugins/metas.ts";
 import icons from "lume/plugins/icons.ts";
 import { merge } from "lume/core/utils/object.ts";
 import feed, { Options as FeedOptions } from "lume/plugins/feed.ts";
-import anchor from "npm:markdown-it-anchor";
-import { footnote } from "npm:@mdit/plugin-footnote";
-
+import toc from "lume_markdown_plugins/toc.ts";
+import footnotes from "lume_markdown_plugins/footnotes.ts";
 import "lume/types.ts";
 
 const BASE_FONT_URL: string = "https://fonts.google.com/share?selection.family=";
@@ -35,8 +34,11 @@ export default function (userOptions?: Options) {
             .use(sitemap())
             .use(feed(options.feed))
             .use(jsx())
+            .use(toc())
+            .use(footnotes())
             .add([".css"])
             .add("fonts")
+            .add("img")
             .preprocess([".md"], (pages) => {
             for (const page of pages) {
                 page.data.excerpt ??= (page.data.content as string).split(
@@ -44,8 +46,5 @@ export default function (userOptions?: Options) {
                 )[0];
             }
         });
-
-        site.hooks.addMarkdownItPlugin(footnote);
-        site.hooks.addMarkdownItPlugin(anchor, {level: 2});
     };
 }

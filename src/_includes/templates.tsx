@@ -64,6 +64,50 @@ function yyyy_mm_dd(date: Date): string {
   return date.toISOString().slice(0, 10);
 }
 
+export function Post({title, children, footnotes}: {
+    title: string,
+    children: any,
+    footnotes: any[],
+}) {
+
+    // see: https://github.com/lumeland/markdown-plugins/blob/main/footnotes/demo/_includes/default.vto
+    const ft_block = (footnotes: any[]) => {
+        if (footnotes && footnotes.length > 0) {
+            return (
+                <aside role="note" class="footnotes">
+                    <ol>
+                        {footnotes.map((note) => {
+                            <li key={note.id} id={ note.id }>
+                                { note.content }
+                                <a href={`#${note.refId}`}
+                                   class="footnote-backref">↩
+                                </a>
+                            </li>
+                        })}
+                    </ol>
+                </aside>
+            );
+        }
+        return null;
+    };
+
+    return (
+        <Base>
+
+            <article
+                class="post"
+                data-pagefind-body
+                data-title={title}
+                data-pagefind-index-attrs="data-title" >
+                <h1 class="post-title">{ title }</h1>
+                <div> { children } </div>
+                {ft_block(footnotes)}
+            </article>
+
+        </Base>
+    );
+}
+
 export function PostList({posts}: {posts: PageData[]}) {
     const post_list = posts.map((post: PageData) => {
         return (
