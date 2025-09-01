@@ -40,6 +40,14 @@ footer {
     margin: .25em 0;
 }
 
+/* blockquote > p::before  { */
+/*     content: "“"; */
+/*     color: #0f5499; */
+/*     font-size: 3em; */
+/*     /\* border-left: #0f5499 solid .4em; *\/ */
+/*     /\* padding-left: .325em; *\/ */
+/* } */
+
 article > *, article > section > *, figure.blockquote { max-width: 65ch; }
 article > section, article > figure, article > section > figure { max-width: 80ch; }
 
@@ -63,7 +71,6 @@ svg.icon { width: 1rem; height: 1rem; vertical-align: middle; }
 h1, h2, h3 {
     font-family: "Niramit", "Open Sans", sans-serif;
     font-weight: 400;
-    /* color: #076678; */
     color: rgba(7, 112, 171, 9);
     text-rendering: optimizeLegibility;
     text-wrap: balance;
@@ -205,8 +212,8 @@ dfn, .small-caps { font-style: normal; font-variant: small-caps; }
 .post-list      { margin-left: 0; list-style: none; }
 .post-list > li { margin-top: 1em; }
 .post-list h2   { margin-top: 0; }
-.post-list a       { color: #ba3925; text-decoration: none; display: block; }
-.post-list a:hover { color: #ba3925; text-decoration: underline; }
+.post-list a       { color: rgba(7,112,171,9); text-decoration: none; display: block; }
+.post-list a:hover { color: rgba(7,112,171,9); text-decoration: underline; }
 
 .about-ava { float: left; margin-right: 2ch; display: inline;}
 
