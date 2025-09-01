@@ -26,6 +26,7 @@
     "jsr:@std/toml@^1.0.3": "1.0.8",
     "jsr:@std/yaml@1.0.9": "1.0.9",
     "jsr:@std/yaml@^1.0.5": "1.0.9",
+    "npm:@mdit/plugin-attrs@*": "0.23.1_markdown-it@14.1.0",
     "npm:@mdit/plugin-footnote@*": "0.22.2_markdown-it@14.1.0",
     "npm:estree-walker@3.0.3": "3.0.3",
     "npm:highlight.js@11.11.1": "11.11.1",
@@ -120,6 +121,27 @@
     }
   },
   "npm": {
+    "@mdit/helper@0.22.1_markdown-it@14.1.0": {
+      "integrity": "sha512-lDpajcdAk84aYCNAM/Mi3djw38DJq7ocLw5VOSMu/u2YKX3/OD37a6Qb59in8Uyp4SiAbQoSHa8px6hgHEpB5g==",
+      "dependencies": [
+        "@types/markdown-it",
+        "markdown-it"
+      ],
+      "optionalPeers": [
+        "markdown-it"
+      ]
+    },
+    "@mdit/plugin-attrs@0.23.1_markdown-it@14.1.0": {
+      "integrity": "sha512-KY05v0DIBMItOxoniyDxxtyYIiT+0JTQ2Ke0mzyCyvPplqCv4Avus7/uAZ3+IGcaI2oOTlYEHdU288VBFgXjAw==",
+      "dependencies": [
+        "@mdit/helper",
+        "@types/markdown-it",
+        "markdown-it"
+      ],
+      "optionalPeers": [
+        "markdown-it"
+      ]
+    },
     "@mdit/plugin-footnote@0.22.2_markdown-it@14.1.0": {
       "integrity": "sha512-lHB6AV61QruvrWXIu/oWncltH2ED8cBUuvX4IO+5TvtWSyyc6wOm3ErPqqTFJqy1SJ1p21oLNcqRGdPF+S3N4w==",
       "dependencies": [
