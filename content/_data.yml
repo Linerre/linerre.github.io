@@ -1,8 +1,4 @@
-menu_links:
-    - text: "About"
-      href: "/about"
-    - text: "Links"
-      href: "/links"
+layout: index.tsx
 
 # Metas plugin https://lume.land/plugins/metas/#description
 metas:

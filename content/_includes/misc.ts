@@ -1,8 +1,19 @@
-import { Page } from 'lume/core/file.ts';
-import { PostList } from './templates.tsx';
+export const Category = 'post' | 'prose';
 
-async function collect_posts(): Promise<any[]> {
-    const posts = [];
+export type Post = {
+    title: string;
+    date: Date;
+    slug: string;
+    year: number;
+    month: numbe;
+    day: number;
+    url: string;
+    src: string;
+    category: Category;
+};
+
+async function collect_posts(): Promise<Post[]> {
+    const posts: Post[] = [];
 
     try {
         for await (const entry of Deno.readDir("./src/posts/")) {
@@ -29,14 +40,9 @@ async function collect_posts(): Promise<any[]> {
                 year: parseInt(year),
                 month: parseInt(month),
                 day: parseInt(day),
-                // path: `/${y}/${m}/${d}/${slug}.html`,
                 url: `/${year}/${month}/${day}/${slug}.html`,
-                data: {
-                    title,
-                    date,
-                    url: `/${year}/${month}/${day}/${slug}/`,
-                    type: 'post'
-                }
+                src: `/posts/${year}-${month}-${day}-${slug}.md`,
+                category: 'post',
             });
         }
     } catch (error) {
@@ -48,11 +54,4 @@ async function collect_posts(): Promise<any[]> {
     posts.sort((a, b) => b.date.getTime() - a.date.getTime());
 
     return posts;
-}
-
-
-// pass over to Lume
-export default async (data: Lume.Data, helpers: Lume.Helpers) => {
-    const posts = await collect_posts();
-    return (<PostList posts={posts} />);
 }

@@ -20,18 +20,19 @@ function Base({ children, metas, path}: {
                 <link
                     rel="alternate"
                     type="application/rss+xml"
-                    title="matklad"
+                    title="errenil"
                     href={`${site_url}/feed.xml`}
                 />
                 <link rel="canonical" href={`${site_url}${path}`} />
-                <link rel="stylesheet" href="/main.css" />
+                <link rel="stylesheet" href="/css/main.css" />
+                <link rel="stylesheet" href="/css/block.css" />
             </head>
             <body>
                 <header>
                     <nav>
                         <a class="sitename" href="/"> { site_name } </a>
-                        <a href="/about.html">About</a>
-                        <a href="/links.html">Links</a>
+                        <a href="/pages/about.html">About</a>
+                        <a href="/pages/links.html">Links</a>
                     </nav>
                 </header>
 
