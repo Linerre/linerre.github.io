@@ -1,5 +1,5 @@
 import lume from "lume/mod.ts";
-import plugins from "./plugins.ts";
+import plugins from "./src/plugins.ts";
 
 const site = lume({
     src: "./content",
