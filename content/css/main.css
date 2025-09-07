@@ -30,6 +30,40 @@ header {
     & .sitename { font-size: 1.2em; flex-grow: 2; }
 }
 
+/* fonts */
+
+@font-face {
+  font-family: 'LiberationSans';
+  src: url('/fonts/LiberationSans-Regular.ttf') format('truetype'),
+       url('/fonts/LiberationSans-Bold.ttf') format('truetype'),
+       url('/fonts/LiberationSans-BoldItalic.ttf') format('truetype'),
+       url('/fonts/LiberationSans-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LiberationSerif';
+  src: url('/fonts/LiberationSerif-Regular.ttf') format('truetype'),
+       url('/fonts/LiberationSerif-Bold.ttf') format('truetype'),
+       url('/fonts/LiberationSerif-BoldItalic.ttf') format('truetype'),
+       url('/fonts/LiberationSerif-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LiberationMono';
+  src: url('/fonts/LiberationMono-Regular.ttf') format('truetype'),
+       url('/fonts/LiberationMono-Bold.ttf') format('truetype'),
+       url('/fonts/LiberationMono-BoldItalic.ttf') format('truetype'),
+       url('/fonts/LiberationMono-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 /* article header */
 header:has(> h1) {
     margin: .5em 0;
@@ -51,17 +85,8 @@ p, table, ol, ul, figure, aside, dl, hr { margin-bottom: var(--line-height); }
 sup, sub { line-height: 0; }
 svg.icon { width: 1rem; height: 1rem; vertical-align: middle; }
 
-@font-face {
-  font-family: 'Niramit';
-  src: url('/fonts/Niramit-ExtraLight.ttf') format('truetype'),
-       url('/fonts/Niramit-Light.ttf') format('truetype'),
-       url('/fonts/Niramit-Medium.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 h1, h2, h3 {
-    font-family: sans-serif;
+    font-family: "LiberationSans", sans-serif;
     font-weight: 400;
     color: rgba(7, 112, 171, 9);
     text-rendering: optimizeLegibility;
@@ -111,7 +136,7 @@ aside.block {
 }
 
 aside.block > .title {
-    font-family: "Open Sans", sans-serif; font-size: 1.5rem; color: #7a2518;
+    font-family: "LiberationSans", sans-serif; font-size: 1.5rem; color: #7a2518;
     text-align: center;
     margin-top: 0; margin-bottom: 0.5rem;
 }
@@ -121,7 +146,7 @@ aside.block > :last-child { margin-bottom: 0; }
 details { padding-left: 1em; border-left: 3px solid #19407c; }
 
 code {
-    font-family: "Liberation Mono", monospace;
+    font-family: "LiberationMono", monospace;
     font-variant-ligatures: none;
     color: rgba(0, 0, 0, .9);
 }
@@ -137,15 +162,6 @@ figure.code-block > pre > code {
     /* counter-reset: line; */
     overflow-x: auto; overflow-y: clip;
     line-height: 1.2;
-}
-figure.code-block > pre > code > .line { counter-increment: line; }
-figure.code-block > pre > code > .line:before {
-    content: counter(line);
-    display: inline-block;
-    width: 3ch; padding-right: 0.5ch; margin-right: 1ch;
-    text-align: right;
-    opacity: .35;
-    border-right: 1px solid black;
 }
 
 /* styles for custom arious blocks */
