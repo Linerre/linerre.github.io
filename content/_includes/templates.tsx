@@ -128,3 +128,14 @@ export function PostList({posts}: {posts: Page[]}) {
         </Base>
     );
 }
+
+export function About({children, footnotes}: {
+    children: any,
+    footnotes: any[]
+}) {
+    return (
+        <Base>
+            { children }
+        </Base>
+    );
+}
