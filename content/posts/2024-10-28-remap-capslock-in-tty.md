@@ -19,7 +19,7 @@ When in a tty (Linux), how can I map Caps lock to escape? {.claude-prompt}
 For a TTY (virtual console) in Linux, you can use the `loadkeys` command with a custom keymap. Here's how to do it:
 
 1. Create a temporary keymap file
-   ```console {.claude-resp-code}
+   ```console
    $ cat > /tmp/caps2esc.map << 'EOF'
    keymaps 0-127
    keycode 58 = Escape
@@ -27,18 +27,18 @@ For a TTY (virtual console) in Linux, you can use the `loadkeys` command with a 
    ```
 
 2. Load the keymap
-   ```console {.claude-resp-code}
+   ```console
    $ loadkeys /tmp/caps2esc.map
    ```
 
 3. Optional: To make it permanent, copy to a persistent location
-   ```console {.claude-resp-code}
+   ```console
    $ sudo cp /tmp/caps2esc.map /usr/local/share/kbd/keymaps/
    $ sudo loadkeys /usr/local/share/kbd/keymaps/caps2esc.map
    ```
 
 4. Add to /etc/rc.local for persistence across reboots:
-   ```console {.claude-resp-code}
+   ```console
    $ sudo loadkeys /usr/local/share/kbd/keymaps/caps2esc.map
    ```
 
@@ -78,13 +78,13 @@ Instead, if you want to make this permanent, I recommend either:
 
 1. Store the keymap in a persistent location:
 
-    ```console {.claude-resp-code}
+    ```console
     $ cp /tmp/caps2esc.map /usr/local/share/kbd/keymaps/
     ```
 
 2. Then add the loadkeys command to `/etc/rc.local` (which runs once at boot time):
 
-    ```console {.claude-resp-code}
+    ```console
     $ loadkeys /usr/local/share/kbd/keymaps/caps2esc.map
     ```
 
@@ -110,26 +110,26 @@ If you want to keep your custom keymap separate:
 
 1. Create the keymap in a persistent location
 
-    ```console {.claude-resp-code}
+    ```console
     $ mkdir -p /usr/local/share/keymaps
     $ cp /tmp/caps2esc.map /usr/local/share/keymaps/
     ```
 
 2. Edit `/etc/conf.d/keymaps`:
-   ``` {.claude-resp-code}
+   ```
    keymap=/usr/local/share/keymaps/caps2esc
    ```
 
 Or, simpler approach: just add the remap directive directly to your existing keymap by editing `/etc/conf.d/keymaps`:
 1. Set your regular keymap
 
-    ``` {.claude-resp-code}
+    ```
     keymap="us"  # or whatever your current keymap is
     ```
 
 2. Add the caps lock remap
 
-    ``` {.claude-resp-code}
+    ```
     windowkeys="yes"  # if not already set
     extended_keymaps="caps2esc"
     keymap_custom="keycode 58 = Escape"
@@ -151,7 +151,7 @@ for the second approach, how does `extended_keymaps="caps2esc"` work? I don't se
 Ah, I apologize for my mistake. You're absolutely right - I included `extended_keymaps="caps2esc"` incorrectly. This setting is for loading predefined keymaps from `/usr/share/keymaps/`, and "caps2esc" isn't a standard keymap.
 
 For your case, you only need:
-``` {.claude-resp-code}
+```
 # In /etc/conf.d/keymaps
 # Set your regular keymap
 keymap="us"  # or whatever your current keymap is
@@ -179,7 +179,7 @@ Looking at the Gentoo Wiki and OpenRC documentation, for custom keymap modificat
 
 Either create a complete custom keymap file:
 
-```console {.claude-resp-code}
+```console
 $ mkdir -p /usr/local/share/keymaps
 
 # Create your custom keymap based on your current one
@@ -189,7 +189,7 @@ Edit the map to change Caps Lock to Escape: `keycode 58 = Escape`
 
 Then in `/etc/conf.d/keymaps`:
 
-``` {.claude-resp-code}
+```
 keymap="/usr/local/share/keymaps/personal"
 ```
 
@@ -210,14 +210,14 @@ It turned out that the [Wiki](https://wiki.gentoo.org/wiki/Keyboard_layout_switc
 1.  Use an editor (probably Emacs, vi[m] or nano) to create a `<keymap>.map` file. `<keymap>` can be an arbitrary name but it's better to use an informative one, such as `caps2esc` in this case
 2.  In the newly created file, add the following content:
 
-    ``` {.claude-resp-code}
+    ```
     include "us.map"
     keycode  58 = Escape
     ```
 
 3.  Compress the file and put this file under `/usr/share/keymaps/i386/qwerty/`.
 
-    ```console {.claude-resp-code}
+    ```console
     $ gzip caps2esc.map
     $ cp caps2esc.map /usr/share/keymaps//i386/qwerty/
     ```
@@ -226,14 +226,14 @@ It turned out that the [Wiki](https://wiki.gentoo.org/wiki/Keyboard_layout_switc
 
 4.  In the file `/etc/conf.d/keymaps`, use the newly created map above
 
-    ```diff {.claude-resp-code}
+    ```diff
     -keymap=""
     +keymap="caps2esc.map"
     ```
 
 5.  Restart the keymap service. Since I'm using OpenRC:
 
-    ```console {.claude-resp-code}
+    ```console
     rc-service keymaps restart
     rc-update add keymaps boot # redundant but harmless
     ```
