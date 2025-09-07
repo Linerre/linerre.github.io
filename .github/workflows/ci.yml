@@ -2,7 +2,7 @@ name: CI for blog site
 
 on:
   push:
-    branches: 
+    branches:
       - master
 
 jobs:
@@ -12,7 +12,7 @@ jobs:
       contents: read
       pages: write
       id-token: write
-    
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -22,13 +22,13 @@ jobs:
       - uses: denoland/setup-deno@v2
         with:
           cache: true
-          
+
       - run: deno task build
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: "_site"
+          path: ./_site
 
       - name: Deploy to GitHub Pages
         id: deployment
