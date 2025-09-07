@@ -10,7 +10,7 @@ import toc from 'lume_markdown_plugins/toc.ts';
 import footnotes from 'lume_markdown_plugins/footnotes.ts';
 import 'lume/types.ts';
 
-import { removeClass } from './processor.ts';
+import { cleanPreCodeClass, wrapPreWithFigure } from './processor.ts';
 
 import clojure from 'npm:highlight.js/lib/languages/clojure';
 import haskell from 'npm:highlight.js/lib/languages/haskell';
@@ -67,12 +67,7 @@ export default function (userOptions?: Options) {
             .add('img')
             .add(['.js'])
             .ignore("src")
-            .process([".html"], (pages) => {
-            for (const page of pages) {
-                for (const code of page.document.querySelectorAll('code')) {
-                    removeClass(code, 'hljs');
-                }
-            }
-        });
+            .process([".html"], cleanPreCodeClass)
+            .process([".html"], wrapPreWithFigure);
     };
 }
