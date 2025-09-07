@@ -133,9 +133,9 @@ figcaption.title {
     margin-top: 0; margin-bottom: 0.25em;
 }
 figure.code-block > pre > code {
-    display: flex; flex-direction: column;
+    /* display: flex; flex-direction: column; */
+    /* counter-reset: line; */
     overflow-x: auto; overflow-y: clip;
-    counter-reset: line;
     line-height: 1.2;
 }
 figure.code-block > pre > code > .line { counter-increment: line; }
@@ -238,14 +238,17 @@ dfn, .small-caps { font-style: normal; font-variant: small-caps; }
 /* Highlighting */
 
 .hl-keyword, .hl-literal { color: #000000; font-weight: bold; }
-.hl-type    { color: #0086B3; }
+/* .hl-type    { color: #0086B3; } */
 .hl-tag     { color: #000080; }
-.hl-title.function_ { color: #990000; font-weight: bold; }
+.hl-title { color: #3465a4; }
+.hl-title.function_ { color: #3465a4; }
 .hl-title.class_{ color: #445588; font-weight: bold; }
-.hl-comment { color: #008000; font-style: italic; }
-.hl-built_in, .hl-meta { color: #3c5d5d; font-weight: bold; }
-.hl-number { color: #009999; }
-.hl-string { color: #d14; }
+.hl-comment { color: #b35000; }
+/* .hl-built_in, .hl-meta { color: #3c5d5d; font-weight: bold; } */
+.hl-built_in { color: #000000; }
+.hl-meta { color: #3c5d5d; }
+.hl-number { color: #397104; }
+.hl-string { color: #397104; }
 .hl-output { color: #2156a5; }
 .hl-subst { color: rgba(0, 0, 0, .9); }
 .hl-attr, .hl-symbol { color: #008080; }
