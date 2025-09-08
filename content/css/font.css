@@ -1,0 +1,110 @@
+/* Inter */
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Light.woff2") format("woff2"),
+       url("/fonts/Inter-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-LightItalic.woff2") format("woff2"),
+       url("/fonts/Inter-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Regular.woff2") format("woff2"),
+       url("/fonts/Inter-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Italic.woff2") format("woff2"),
+       url("/fonts/Inter-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Bold.woff2") format("woff2"),
+       url("/fonts/Inter-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-BoldItalic.woff2") format("woff2"),
+       url("/fonts/Inter-BoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Crimson Text */
+@font-face {
+  font-family: "Crimson Text";
+  src: url("/fonts/crimsontext-regular-webfont.woff2") format("woff2"),
+       url("/fonts/crimsontext-regular-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Crimson Text";
+  src: url("/fonts/crimsontext-italic-webfont.woff2") format("woff2"),
+       url("/fonts/crimsontext-italic-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Crimson Text";
+  src: url("/fonts/crimsontext-bold-webfont.woff2") format("woff2"),
+       url("/fonts/crimsontext-bold-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Crimson Text";
+  src: url("/fonts/crimsontext-bolditalic-webfont.woff2") format("woff2"),
+       url("/fonts/crimsontext-bolditalic-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Liberation Mono */
+@font-face {
+  font-family: "Liberation Mono";
+  src: url("/fonts/LiberationMono-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Liberation Mono";
+  src: url("/fonts/LiberationMono-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Liberation Mono";
+  src: url("/fonts/LiberationMono-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Liberation Mono";
+  src: url("/fonts/LiberationMono-BoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+}
