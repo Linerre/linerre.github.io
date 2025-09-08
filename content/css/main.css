@@ -94,7 +94,7 @@ ol, ul, dd { padding-left: 3ch; }
 ul { list-style-type: circle;}
 .roman { list-style-type: lower-roman; }
 
-dt { font-weight: bold; }
+dt { margin-top: 1rem; font-weight: bold; }
 
 aside.admn { display: flex; flex-direction: row; align-items: center; }
 aside.admn > svg.icon { flex-shrink: 0; width: 2rem; height: 2rem; fill: #19407c; }

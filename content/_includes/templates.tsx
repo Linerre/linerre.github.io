@@ -32,6 +32,7 @@ function Base({ children, metas, path}: {
           <nav>
             <a class="sitename" href="/"> { site_name } </a>
             <a href="/pages/about.html">About</a>
+            <a href="/pages/blogroll.html">Blogroll</a>
             <a href="/pages/links.html">Links</a>
           </nav>
         </header>
@@ -134,6 +135,17 @@ export function PostList({posts}: {posts: Page[]}) {
 }
 
 export function About({children, footnotes}: {
+  children: any,
+  footnotes: any[]
+}) {
+  return (
+    <Base>
+      { children }
+    </Base>
+  );
+}
+
+export function Blogroll({children, footnotes}: {
   children: any,
   footnotes: any[]
 }) {
