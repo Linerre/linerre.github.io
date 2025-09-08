@@ -1,7 +1,7 @@
 ---
 title: Remap CapsLock to Escape in Linux TTY
 date: 2024-10-28
-summary: Maybe AI is not good at it or I'm not at prompting AI for such as mall task.
+summary: Maybe AI is not good at it or I'm bat at prompting it for such as mall task.
 ---
 
 These days I tend to ssh to my Gentoo machine more and more, so most of the time I just stay in a tty environment as root user (Yep, I like managing my packages as root user directly).  The only problem is I'd like to remap the <kbd><kbd>CapsLock</kbd></kbd> to <kbd><kbd>Escape</kbd></kbd> for better editing experience in Emacs with [Meow](https://github.com/meow-edit/meow).
@@ -68,7 +68,7 @@ As a root user, can I add the following line to my `.bash_profile` ? {.claude-pr
 
 ### Claude response:
 
-No, I wouldn't recommend adding that line to .bash<sub>profile</sub> for a couple of reasons:
+No, I wouldn't recommend adding that line to `.bash_profile` for a couple of reasons:
 
 The `/tmp` directory is cleared on reboot, so your keymap file won't persist
 loadkeys affects the entire system (all TTYs/virtual consoles), not just your session

@@ -11,7 +11,7 @@
 /* html */
 :root {
     font-family: "Crimson Text", serif;
-    font-size-adjust: ex-height 0.6;
+    font-size-adjust: ex-height 0.55;
     --line-height: 1.5rem;
     line-height: var(--line-height);
     --code-default-foreground: #4c504c;
@@ -41,7 +41,7 @@ header {
 
 /* article header */
 header:has(> h1) {
-    margin: .5em 0;
+    margin: .75rem 0;
     & h1 { margin-bottom: 0; line-height: 1.2 }
 }
 
