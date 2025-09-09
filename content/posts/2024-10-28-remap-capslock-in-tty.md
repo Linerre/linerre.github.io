@@ -1,7 +1,7 @@
 ---
 title: Remap CapsLock to Escape in Linux TTY
 date: 2024-10-28
-summary: Maybe AI is not good at it or I'm bat at prompting it for such as mall task.
+summary: Maybe AI is not good at it or maybe I'm bad at prompting.
 ---
 
 These days I tend to ssh to my Gentoo machine more and more, so most of the time I just stay in a tty environment as root user (Yep, I like managing my packages as root user directly).  The only problem is I'd like to remap the <kbd><kbd>CapsLock</kbd></kbd> to <kbd><kbd>Escape</kbd></kbd> for better editing experience in Emacs with [Meow](https://github.com/meow-edit/meow).
