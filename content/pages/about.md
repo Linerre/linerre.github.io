@@ -12,11 +12,12 @@ I'm mostly interested in the following subjects:
 - Programming Languages and Compilers
 - Blockchain and decentralized Web3 applications
 - Web technologies (Deno, Node.js, TypeScript, etc)
+- Distributed Systems and Cloud Computing (I'm learning AWS)
 - Free and Open Source Software (FOSS)
 - Skateboard (out of practice for too long, alas)
 - Learning Japanese/Korea and improving English
 - Reading long in-depth reports published on *The New Yorker*
-- (Some) K-Drama TV series
+- Watching (some) K-Drama TV series
 
 # about this site
 Previously the site was built with [Hakyll](https://jaspervdj.be/hakyll/), but after my old domain expired, I planed to migrate my site to a new domain with a new SSG.  Now it runs on [Lume](https://lume.land/). As the migration is in process and the site is undergoing reconstruction, expect more.

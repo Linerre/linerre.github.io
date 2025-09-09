@@ -1,6 +1,6 @@
 ---
-title: Blogroll
-layout: blogroll.tsx
+title: Links
+layout: links.tsx
 ---
 
 The inspirations that I used to simply bury in my browser's favorites. No longer!
@@ -36,8 +36,11 @@ Fabrice Bellard
 Felix Yang (a.k.a. 肥猫)
 : <https://felixc.at/>
 
-gingerBill (creator of Odin)
+gingerBill
 : <https://www.gingerbill.org/>
+
+graydon2
+: <https://graydon2.dreamwidth.org/>
 
 joshua stein
 : <https://jcs.org/>

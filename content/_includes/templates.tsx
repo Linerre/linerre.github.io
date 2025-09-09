@@ -25,14 +25,12 @@ function Base({ children, metas, path}: {
         />
         <link rel="canonical" href={`${site_url}${path}`} />
         <link rel="stylesheet" href="/css/main.css" />
-        <link rel="stylesheet" href="/css/block.css" />
       </head>
       <body>
         <header>
           <nav>
             <a class="sitename" href="/"> { site_name } </a>
             <a href="/pages/about.html">about</a>
-            <a href="/pages/blogroll.html">blogroll</a>
             <a href="/pages/links.html">links</a>
           </nav>
         </header>
@@ -154,4 +152,15 @@ export function Blogroll({children, footnotes}: {
       { children }
     </Base>
   );
+}
+
+export function Links({children, footnotes}: {
+  children: any,
+  footnotes: any[]
+}) {
+  return (
+    <Base>
+      { children }
+    </Base>
+  )
 }
