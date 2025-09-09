@@ -25,6 +25,12 @@ function sectionWrapper(pages: Page[]) {
       nexts.forEach(next => {
         section.appendChild(next);
       });
+
+      const h2attrs = Array.from(h2.attributes);
+      h2attrs.forEach(attr => {
+        section.setAttribute(attr.name, attr.value);
+        h2.removeAttribute(attr.name);
+      })
     });
   }
 }
