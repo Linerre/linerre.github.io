@@ -31,9 +31,9 @@ function Base({ children, metas, path}: {
         <header>
           <nav>
             <a class="sitename" href="/"> { site_name } </a>
-            <a href="/pages/about.html">About</a>
-            <a href="/pages/blogroll.html">Blogroll</a>
-            <a href="/pages/links.html">Links</a>
+            <a href="/pages/about.html">about</a>
+            <a href="/pages/blogroll.html">blogroll</a>
+            <a href="/pages/links.html">links</a>
           </nav>
         </header>
 

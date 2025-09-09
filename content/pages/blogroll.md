@@ -3,7 +3,17 @@ title: Blogroll
 layout: blogroll.tsx
 ---
 
-Useful things that I used to simply bury in my browser's favorites. No longer!
+The inspirations that I used to simply bury in my browser's favorites. No longer!
+
+Alex Chi Z.
+: <https://skyzh.dev/>
+: <https://twitter.com/iskyzh>
+
+Alex Yang
+: <https://www.himself65.com/>
+
+Andrew Kelley
+: <https://andrewkelley.me/>
 
 Bisqwit
 : <https://www.youtube.com/@Bisqwit>
@@ -26,8 +36,16 @@ Fabrice Bellard
 Felix Yang (a.k.a. 肥猫)
 : <https://felixc.at/>
 
+gingerBill (creator of Odin)
+: <https://www.gingerbill.org/>
+
 joshua stein
 : <https://jcs.org/>
+
+Jonathan Blow
+: <https://www.youtube.com/user/jblow888/videos>
+: <https://www.twitch.tv/j_blow>
+: <https://x.com/jonathan_blow>
 
 lilydjwg (a.k.a 依云)
 : <https://blog.lilydjwg.me/>

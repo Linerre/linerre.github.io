@@ -3,7 +3,7 @@ title: About
 layout: about.tsx
 ---
 
-# About me
+# about me
 I'm Zhiren Lin. When studying in Australia, Aussies tend to call me **Ziren** and some of my friends/mates prefer just **Lin**. On the Internet I often use **errenil**, pronounced as "error nil".
 
 I'm mostly interested in the following subjects:
@@ -18,5 +18,5 @@ I'm mostly interested in the following subjects:
 - Reading long in-depth reports published on *The New Yorker*
 - (Some) K-Drama TV series
 
-# About this site
+# about this site
 Previously the site was built with [Hakyll](https://jaspervdj.be/hakyll/), but after my old domain expired, I planed to migrate my site to a new domain with a new SSG.  Now it runs on [Lume](https://lume.land/). As the migration is in process and the site is undergoing reconstruction, expect more.
