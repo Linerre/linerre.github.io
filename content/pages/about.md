@@ -19,4 +19,4 @@ I'm mostly interested in the following subjects:
 - (Some) K-Drama TV series
 
 # About this site
-Previously the site was built with [Hakyll](https://jaspervdj.be/hakyll/), but after my old domain expired, I planed to migrate my site to a new domain with a new SSG.  Now it runs on [Lume](https://lume.land/). As the migration is in process, expect more.
+Previously the site was built with [Hakyll](https://jaspervdj.be/hakyll/), but after my old domain expired, I planed to migrate my site to a new domain with a new SSG.  Now it runs on [Lume](https://lume.land/). As the migration is in process and the site is undergoing reconstruction, expect more.

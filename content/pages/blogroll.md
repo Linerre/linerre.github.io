@@ -46,15 +46,16 @@ matklad
 Michał Górny
 : <https://blogs.gentoo.org/mgorny/author/mgorny/>
 
-Russ Cox
-: <https://swtch.com/~rsc/>
-: <https://research.swtch.com/>
+Rick Hickey
+: <https://github.com/richhickey>
+: <https://youtube.com/playlist?list=PLZdCLR02grLrEwKaZv-5QbUzK0zGKOOcr&si=PzWQWx5rdq84dsDx>
 
 Roife
 : <https://roife.github.io/>
 
-Rick Hickey
-: <https://github.com/richhickey>
+Russ Cox
+: <https://swtch.com/~rsc/>
+: <https://research.swtch.com/>
 
 Sean Corfiled: An Crchitect's View
 : <https://corfield.org/>
