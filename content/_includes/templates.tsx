@@ -40,6 +40,22 @@ function Base({ children, metas, path}: {
         </main>
 
         <footer>
+          <p>
+            <a href="/feed.xml">
+              <FooterIcon name="rss" />
+              Subscribe
+            </a>
+
+            <a href="mailto:zlinerre@gmail.com">
+              <FooterIcon name="email" />
+              Contact
+            </a>
+
+            <a href="https://github.com/Linerre">
+              <FooterIcon name="github" />
+              Linerre
+            </a>
+          </p>
         </footer>
       </body>
     </html>
@@ -62,6 +78,14 @@ function Time({ date, className = undefined }: {
 
 function yyyy_mm_dd(date: Date): string {
   return date.toISOString().slice(0, 10);
+}
+
+function FooterIcon({ name }: { name: string }) {
+  return (
+    <svg>
+      <use href={`/img/icons.svg#${name}`} />
+    </svg>
+  );
 }
 
 export function Post({title, date, children, footnotes}: {
