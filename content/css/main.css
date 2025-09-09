@@ -50,7 +50,11 @@ footer {
 }
 
 article > *, article > section > *, figure.blockquote { max-width: 65ch; }
-article > section, article > figure, article > section > figure { max-width: 80ch; }
+article > section, article > figure, article > section > figure {
+  max-width: 80ch;
+  overflow-x: auto;
+  overflow-y: clip;
+}
 
 h1     { margin: 0.75rem 0; }
 h2, h3 { margin: 0.5rem 0; }
@@ -63,7 +67,7 @@ svg.icon { width: 1rem; height: 1rem; vertical-align: middle; }
 h1, h2, h3 {
     font-family: "Inter", sans-serif;
     font-weight: 300;
-    color: rgba(7, 112, 171, 9);
+    color: rgba(7,112,171,.9);
     text-rendering: optimizeLegibility;
     text-wrap: balance;
     line-height: 1em;
@@ -133,32 +137,11 @@ figcaption.title {
     margin-top: 0; margin-bottom: 0.25em;
 }
 figure.code-block > pre > code {
-    /* display: flex; flex-direction: column; */
-    /* counter-reset: line; */
-    overflow-x: auto; overflow-y: clip;
     line-height: 1.2;
 }
 
-/* styles for custom arious blocks */
-.claude-prompt {
-    width: 85%;
-    margin-bottom: var(--line-height);
-    margin-right: auto; margin-left: auto;
-    border-radius: .25rem;
-}
-
-.claude-resp-code {
-    border-radius: .25rem;
-    margin-bottom: var(--line-height);
-}
-
-pre:has(code.claude-resp-code) {
-    margin-bottom: 1.5rem;
-    border-radius: .5rem;
-}
-
 blockquote > p {
-    border-left: .25rem solid rgba(7, 112, 171, 9);
+    border-left: .25rem solid rgba(7,112,171,.9);
     padding-left: 1rem;
 }
 
@@ -221,8 +204,8 @@ dfn, .small-caps { font-style: normal; font-variant: small-caps; }
 .post-list      { margin-left: 0; list-style: none; }
 .post-list > li { margin-top: 1em; }
 .post-list h2   { margin-top: 0; }
-.post-list a       { color: rgba(7,112,171,9); text-decoration: none; display: block; }
-.post-list a:hover { color: rgba(7,112,171,9); text-decoration: underline; }
+.post-list a       { color: rgb(7,112,171); text-decoration: none; display: block; }
+.post-list a:hover { color: rgb(7,112,171,.7); text-decoration: underline; }
 
 .about-ava { float: left; margin-right: 2ch; display: inline;}
 
