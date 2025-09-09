@@ -106,7 +106,7 @@ export function Post({title, date, children, footnotes}: {
           <h1 class="post-title">{ title }</h1>
           <Time className="meta" date={date} />
         </header>
-        <div> { children } </div>
+        { children }
         {ft_block(footnotes)}
       </article>
 
