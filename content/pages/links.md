@@ -7,7 +7,6 @@ The inspirations that I used to simply bury in my browser's favorites. No longer
 
 Alex Chi Z.
 : <https://skyzh.dev/>
-: <https://twitter.com/iskyzh>
 
 Alex Yang
 : <https://www.himself65.com/>
@@ -28,13 +27,16 @@ CatCoding (a.k.a Yukang)
 : <https://catcoding.me/>
 
 eshan ramesh
-: https://esrh.me/
+: <https://esrh.me/>
 
 Fabrice Bellard
 : <https://bellard.org/>
 
 Felix Yang (a.k.a. 肥猫)
 : <https://felixc.at/>
+
+hemashushu (low-level & programming languages)
+: <https://hemashushu.github.io/>
 
 gingerBill
 : <https://www.gingerbill.org/>
@@ -46,9 +48,7 @@ joshua stein
 : <https://jcs.org/>
 
 Jonathan Blow
-: <https://www.youtube.com/user/jblow888/videos>
 : <https://www.twitch.tv/j_blow>
-: <https://x.com/jonathan_blow>
 
 lilydjwg (a.k.a 依云)
 : <https://blog.lilydjwg.me/>
@@ -58,8 +58,6 @@ Leo3418
 
 magnars
 : <https://magnars.com/>
-: <https://emacsrocks.com/>
-: <https://www.parens-of-the-dead.com/>
 
 matklad
 : <https://matklad.github.io/>
@@ -68,7 +66,6 @@ Michał Górny
 : <https://blogs.gentoo.org/mgorny/author/mgorny/>
 
 Rick Hickey
-: <https://github.com/richhickey>
 : <https://youtube.com/playlist?list=PLZdCLR02grLrEwKaZv-5QbUzK0zGKOOcr&si=PzWQWx5rdq84dsDx>
 
 Roife
