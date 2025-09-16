@@ -4,10 +4,11 @@ const site_name = 'errenil';
 const site_url = 'https://Linerre.github.io';
 const blurb = 'Errenil notes & thoughts';
 
-function Base({ children, metas, path}: {
+function Base({ children, metas, path, extra_css }: {
   children: any,
   metas: any
   path: string,
+  extra_css?: string,
 }) {
   return (
     <html lang="en-US">
@@ -25,38 +26,33 @@ function Base({ children, metas, path}: {
         />
         <link rel="canonical" href={`${site_url}${path}`} />
         <link rel="stylesheet" href="/css/main.css" />
+        {extra_css && <link rel="stylesheet" href={`/css/${extra_css}`} />}
       </head>
       <body>
         <header>
           <nav>
-            <a class="sitename" href="/"> { site_name } </a>
-            <a href="/pages/about.html">about</a>
-            <a href="/pages/links.html">links</a>
+            <div class="sitename">
+              <a  href="/"> { site_name } </a>
+              <a href="mailto:zlinerre@gmail.com">
+                <FooterIcon name="email" />
+              </a>
+              <a href="https://github.com/Linerre">
+                <FooterIcon name="github" />
+              </a>
+              <a href="/feed.xml">
+                <FooterIcon name="rss" />
+              </a>
+            </div>
+            <a href="/pages/about.html">About</a>
+            <a href="/pages/links.html">Links</a>
+            <a href="/pages/blogroll.html">Blogroll</a>
+            <a href="/pages/wiki.html">Wiki</a>
           </nav>
         </header>
 
         <main>
           {children}
         </main>
-
-        <footer>
-          <p>
-            <a href="/feed.xml">
-              <FooterIcon name="rss" />
-              Subscribe
-            </a>
-
-            <a href="mailto:zlinerre@gmail.com">
-              <FooterIcon name="email" />
-              Contact
-            </a>
-
-            <a href="https://github.com/Linerre">
-              <FooterIcon name="github" />
-              Linerre
-            </a>
-          </p>
-        </footer>
       </body>
     </html>
   );
@@ -178,10 +174,7 @@ export function Blogroll({children, footnotes}: {
   );
 }
 
-export function Links({children, footnotes}: {
-  children: any,
-  footnotes: any[]
-}) {
+export function Links({children}: {children: any}) {
   return (
     <Base>
       { children }

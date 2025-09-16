@@ -31,8 +31,14 @@ body {
 
 /* site header */
 header {
-  margin: 1em 0;
+  margin: 1em 0 2em 0;
   & nav { display: flex; column-gap: 2ch; align-items: baseline; flex-wrap: wrap; }
+  & nav div { display: flex; column-gap: 1ch; align-items: center; flex-wrap: wrap; }
+  & nav div a {
+    display: flex; align-items: baseline;
+    color: rgba(0, 0, 0, .8); text-decoration: none; white-space: nowrap;
+    & svg { width: 1.25rem; height: 1.25rem; }
+  }
   & a { font-style: normal; color: rgba(0, 0, 0, .8); text-decoration: none; }
   & a:hover { color: rgba(0, 0, 0, .8); text-decoration: underline; }
   & a:visited { color: rgba(0, 0, 0, .8); }
