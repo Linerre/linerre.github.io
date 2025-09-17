@@ -1,4 +1,5 @@
 import { Page } from 'lume/types.ts';
+import { IBItem } from './types.ts';
 
 const site_name = 'errenil';
 const site_url = 'https://Linerre.github.io';
@@ -171,30 +172,21 @@ export function Links({children}: {children: any}) {
   )
 }
 
-
-// Blogroll
-export interface IBItem {
-  date: Date,
-  title: string,
-  url: string,
-  // quote or comment
-  qorc: string,
-  author?: string,
-}
-
 export function Blogroll({items}: {items: IBItem[]}) {
   const rollList = items.map((item) => {
-    const { date, title, author, url, qorc } = item;
+    const { date, title, author, url, domain, qorc } = item;
     return (
       <li key={title}>
-        <Time className="meta" date={date} />
         <h2>
           <a href={`${url}`}>{ title }</a>
         </h2>
+        <span class="meta">
+          <Time date={date} />, {domain}
+        </span>
         <p>
           {qorc}
         </p>
-        {author && <span>by {author}</span>}
+        {author && <span class="author">by {author}</span>}
       </li>
     );
   });

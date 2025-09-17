@@ -215,13 +215,13 @@ kbd > kbd {
 
 dfn, .small-caps { font-style: normal; font-variant: small-caps; }
 
-.meta { display: block; color: #828282; font-family: "Inter", sans-serif; font-size: 1.5rem; font-weight: 400;}
+.meta { display: block; color: #828282; font-family: "Inter", sans-serif; font-size: 1.4rem; font-weight: 400;}
 
 .menu { font-weight: bold; }
 
 /* Special Cases */
 
-.post-list      { margin-left: 0; list-style: none; }
+.post-list      { margin-left: 0; padding: 0; list-style: none; }
 .post-list > li { margin-top: 1em; }
 .post-list h2   { margin-top: .25rem; }
 .post-list a    { color: var(--h2-title-text-color);
@@ -234,10 +234,11 @@ dfn, .small-caps { font-style: normal; font-variant: small-caps; }
 
 .blogroll-list      { margin-left: 0; padding: 0; list-style: none; }
 .blogroll-list > li { margin-top: 1em; }
+.blogroll-list .author {
+  font-family: "Inter", sans-serif; font-weight: bold;
+  font-size-adjust: 45%; display: block; margin: 0; }
 .blogroll-list h2   { margin-top: .25rem; }
-.blogroll-list p    { margin-bottom: .5rem; }
-.blogroll-list span { font-family: "Inter", sans-serif; font-weight: bold;
-                      font-size-adjust: 45%; display: block; margin: 0; }
+.blogroll-list p    { margin: .25rem 0; }
 .blogroll-list a    { color: var(--h2-title-text-color);
                       text-decoration: none; display: block; }
 .blogroll-list a:hover { color: var(--h2-title-text-hover-color);
