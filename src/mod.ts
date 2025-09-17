@@ -48,10 +48,7 @@ export const defaults: Options = {
 export default function (userOptions?: Options) {
   const options = merge(defaults, userOptions);
 
-
   return (site: Lume.Site) => {
-    site.hooks.addMarkdownItPlugin(attrs, {rule: ['block']});
-
     site.use(metas())
       .use(sitemap())
       .use(feed(options.feed))
@@ -68,4 +65,6 @@ export default function (userOptions?: Options) {
       .add(['.js'])
       .ignore("src");
   };
+
+  site.hooks.addMarkdownItPlugin(attrs, {rule: ['block']});
 }
