@@ -17,14 +17,27 @@
   --h2-title-text-color: rgb(7,112,171);
   --h2-title-text-hover-color: rgb(7,112,171,.7);
 
-  /* claude ai pallete */
-  --claude-ai-bg-300: hsl(48 25% 92.2%);
+  /* ft color palette*/
+  --ft-claret: #990f3d;
+  --ft-crimson: #c00;
+  --ft-teal: #0d7680;
+  --ft-pink: #fcd0b1;
+  --ft-paper: #fff1e5;
+  --ft-grey: #333;
+  --ft-oxford: #0f5499;
+  --ft-light-blue: #00a0dd;
+  --ft-graphics-dark-blue: #006f9b;
+  --ft-matisse-blue: #355778;
+  --ft-sky: #cce6ff;
+  --ft-velvet: #593380;
+
   /* code highlighting color */
   --code-default-foreground: #4c504c;
   --code-keyword-foreground: #000000;
   --code-const-foreground: #75507b;
   --code-function-foreground: #3465a4;
   --code-string-foreground: #397104;
+  --code-comment-foreground: #b35000;
   --code-number-foreground: var(--code-string-foreground);
   background: var(--background-color);
   font-family: "Crimson Text", serif;
@@ -188,7 +201,7 @@ ol.callout > li::before, i.callout::after {
 .two-col > *:last-child { flex: 30%; }
 
 hr { border: none; height: 0; overflow: visible; color: black; height: 1rem; }
-hr::after { content: '❧'; display: block; text-align: center; }
+hr::after { content: '🦕'; display: block; text-align: center; }
 
 /* Inline */
 
@@ -234,9 +247,8 @@ dfn, .small-caps { font-style: normal; font-variant: small-caps; }
 
 .blogroll-list      { margin-left: 0; padding: 0; list-style: none; }
 .blogroll-list > li { margin-top: 1em; }
-.blogroll-list .author {
-  font-family: "Inter", sans-serif; font-weight: bold;
-  font-size-adjust: 45%; display: block; margin: 0; }
+.blogroll-list .author { font-family: "Inter", sans-serif; font-weight: bold;
+                         font-size-adjust: 45%; display: block; margin: 0; }
 .blogroll-list h2   { margin-top: .25rem; }
 .blogroll-list p    { margin: .25rem 0; }
 .blogroll-list a    { color: var(--h2-title-text-color);
@@ -255,10 +267,10 @@ dfn, .small-caps { font-style: normal; font-variant: small-caps; }
 .hl-title.class_ { color: var(--code-default-foreground); }
 
 .hl-title.function_ { color: var(--code-function-foreground); }
-.hl-comment { color: #b35000; }
+.hl-comment { color: var(--code-comment-foreground); }
 /* .hl-title.class_{ color: #445588; } */
 /* .hl-built_in, .hl-meta { color: #3c5d5d; font-weight: bold; } */
-.hl-built_in { color: #000000; }
+.hl-built_in { color: var(--code-keyword-foreground); }
 .hl-meta { color: #3c5d5d; }
 .hl-number { color: var(--code-number-foreground); }
 .hl-string { color: var(--code-number-foreground); }
