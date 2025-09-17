@@ -44,9 +44,9 @@ function Base({ children, metas, path, extra_css }: {
               </a>
             </div>
             <a href="/pages/about.html">About</a>
-            <a href="/pages/links.html">Links</a>
             <a href="/pages/blogroll.html">Blogroll</a>
-            <a href="/pages/wiki.html">Wiki</a>
+            <a href="/pages/links.html">Links</a>
+            {/* <a href="/pages/wiki.html">Wiki</a> */}
           </nav>
         </header>
 
@@ -58,7 +58,11 @@ function Base({ children, metas, path, extra_css }: {
   );
 }
 
-function Time({ date, className = undefined }: {
+function yyyy_mm_dd(date: Date): string {
+  return date.toISOString().slice(0, 10);
+}
+
+export function Time({ date, className = undefined }: {
   date: Date,
   className?: string
 }) {
@@ -70,10 +74,6 @@ function Time({ date, className = undefined }: {
   });
   const machine = yyyy_mm_dd(date);
   return <time class={className} datetime={machine}>{human}</time>;
-}
-
-function yyyy_mm_dd(date: Date): string {
-  return date.toISOString().slice(0, 10);
 }
 
 function FooterIcon({ name }: { name: string }) {
@@ -133,7 +133,7 @@ export function Post({title, date, children, footnotes}: {
 }
 
 export function PostList({posts}: {posts: Page[]}) {
-  const post_list = posts.map((post) => {
+  const postList = posts.map((post) => {
     return (
       <li key={post.title}>
         <Time className="meta" date={post.date} />
@@ -146,7 +146,7 @@ export function PostList({posts}: {posts: Page[]}) {
   return (
     <Base>
       <ul className="post-list">
-        { post_list }
+        { postList }
       </ul>
     </Base>
   );
@@ -163,21 +163,48 @@ export function About({children, footnotes}: {
   );
 }
 
-export function Blogroll({children, footnotes}: {
-  children: any,
-  footnotes: any[]
-}) {
-  return (
-    <Base>
-      { children }
-    </Base>
-  );
-}
-
 export function Links({children}: {children: any}) {
   return (
     <Base>
       { children }
     </Base>
   )
+}
+
+
+// Blogroll
+export interface IBItem {
+  date: Date,
+  title: string,
+  url: string,
+  // quote or comment
+  qorc: string,
+  author?: string,
+}
+
+export function Blogroll({items}: {items: IBItem[]}) {
+  const rollList = items.map((item) => {
+    const { date, title, author, url, qorc } = item;
+    return (
+      <li key={title}>
+        <Time className="meta" date={date} />
+        <h2>
+          <a href={`${url}`}>{ title }</a>
+        </h2>
+        <p>
+          {qorc}
+        </p>
+        {author && <span>by {author}</span>}
+      </li>
+    );
+  });
+
+  return (
+    <Base>
+      <p>Readings worth re-reading.</p>
+      <ul className="blogroll-list">
+        { rollList }
+      </ul>
+    </Base>
+  );
 }

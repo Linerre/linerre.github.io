@@ -10,17 +10,26 @@
 
 /* html */
 :root {
-  font-family: "Crimson Text", serif;
-  font-size-adjust: ex-height 0.55;
+  /* space */
   --line-height: 1.5rem;
-  line-height: var(--line-height);
+  /* general color */
+  --background-color: #eeeeec;
+  --h2-title-text-color: rgb(7,112,171);
+  --h2-title-text-hover-color: rgb(7,112,171,.7);
+
+  /* claude ai pallete */
+  --claude-ai-bg-300: hsl(48 25% 92.2%);
+  /* code highlighting color */
   --code-default-foreground: #4c504c;
   --code-keyword-foreground: #000000;
   --code-const-foreground: #75507b;
   --code-function-foreground: #3465a4;
   --code-string-foreground: #397104;
   --code-number-foreground: var(--code-string-foreground);
-  background: #eeeeec;
+  background: var(--background-color);
+  font-family: "Crimson Text", serif;
+  font-size-adjust: ex-height 0.55;
+  line-height: var(--line-height);
 }
 
 body {
@@ -214,11 +223,26 @@ dfn, .small-caps { font-style: normal; font-variant: small-caps; }
 
 .post-list      { margin-left: 0; list-style: none; }
 .post-list > li { margin-top: 1em; }
-.post-list h2   { margin-top: 0; }
-.post-list a       { color: rgb(7,112,171); text-decoration: none; display: block; }
-.post-list a:hover { color: rgb(7,112,171,.7); text-decoration: underline; }
+.post-list h2   { margin-top: .25rem; }
+.post-list a    { color: var(--h2-title-text-color);
+                  text-decoration: none;
+                  display: block;}
+.post-list a:hover { color: var(--h2-title-text-hover-color);
+                     text-decoration: underline; }
 
 .about-ava { float: left; margin-right: 2ch; display: inline;}
+
+.blogroll-list      { margin-left: 0; padding: 0; list-style: none; }
+.blogroll-list > li { margin-top: 1em; }
+.blogroll-list h2   { margin-top: .25rem; }
+.blogroll-list p    { margin-bottom: .5rem; }
+.blogroll-list span { font-family: "Inter", sans-serif; font-weight: bold;
+                      font-size-adjust: 45%; display: block; margin: 0; }
+.blogroll-list a    { color: var(--h2-title-text-color);
+                      text-decoration: none; display: block; }
+.blogroll-list a:hover { color: var(--h2-title-text-hover-color);
+                         text-decoration: underline; }
+
 
 /* Highlighting */
 

@@ -1,7 +1,8 @@
-// import { Blogroll } from './templates.tsx';
+import { Blogroll, IBItem } from './templates.tsx';
 
-// pass over to Lume
-// export default (data: Lume.Data, helpers: Lume.Helpers) => {
-//   const { children, footnotes } = data;
-//   return (<Blogroll children={children} footnotes={footnotes} />);
-// }
+// Page passed over to Lume
+export default (data: Lume.Data, helpers: Lume.Helpers) => {
+  return (
+    <Blogroll items={data.rollList} />
+  );
+}
