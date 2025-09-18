@@ -13,8 +13,10 @@
   /* space */
   --line-height: 1.5rem;
   /* general color */
-  --background-color: #eeeeec;
-  --h2-title-text-color: rgb(7,112,171);
+  --bg-color: #eeeeec;
+  --bg-color-header: #e0e0e0;
+  --bg-color-code: #e6e6e6;
+  --primary-blue-color: rgb(7,112,171);
   --h2-title-text-hover-color: rgb(7,112,171,.7);
 
   /* ft color palette*/
@@ -31,7 +33,12 @@
   --ft-sky: #cce6ff;
   --ft-velvet: #593380;
 
+  /* gentoo color palette */
+  --gentoo-primary-purple: #54487a;
+
   /* code highlighting color */
+  --chacha-alum-6: #4c504c;
+  --chacha-alum-2: #d3d7cf;
   --code-default-foreground: #4c504c;
   --code-keyword-foreground: #000000;
   --code-const-foreground: #75507b;
@@ -39,7 +46,7 @@
   --code-string-foreground: #397104;
   --code-comment-foreground: #b35000;
   --code-number-foreground: var(--code-string-foreground);
-  background: var(--background-color);
+  background: var(--bg-color);
   font-family: "Crimson Text", serif;
   font-size-adjust: ex-height 0.55;
   line-height: var(--line-height);
@@ -85,10 +92,12 @@ footer {
 
 article > *, article > section > *, figure.blockquote { max-width: 65ch; }
 article > section, article > figure, article > section > figure {
-  max-width: 80ch;
+  max-width: 70ch;
   overflow-x: auto;
   overflow-y: clip;
 }
+
+/* article > section > figure { background-color: var(--chacha-alum-2); padding: .5rem; } */
 
 h1     { margin: 0.75rem 0; }
 h2, h3 { margin: 0.5rem 0; }
@@ -160,7 +169,7 @@ details { padding-left: 1em; border-left: 3px solid #19407c; }
 code {
   font-family: "LiberationMono", monospace;
   font-variant-ligatures: none;
-  color: var(--code-default-foreground);
+  color: var(--chacha-alum-6);
 }
 
 figcaption.title {
@@ -169,12 +178,11 @@ figcaption.title {
   color: #7a2518;
   margin-top: 0; margin-bottom: 0.25em;
 }
-figure.code-block > pre > code {
-  line-height: 1.2;
-}
+
+figure.code-block > pre > code { line-height: 1.2;  }
 
 blockquote > p {
-  border-left: .25rem solid rgba(7,112,171,.9);
+  border-left: .25rem solid var(--primary-blue-color);
   padding-left: 1rem;
 }
 
@@ -214,10 +222,7 @@ a:hover, a:focus { color: #2156a5; fill: #2156a5; }
 a:hover, a:focus { & code { color: #2156a5; fill: #2156a5; } }
 a.url { word-break: break-all; }
 
-kbd {
-  font-family: monospace; font-variant-ligatures: none;
-  line-height: 1;
-}
+kbd { font-family: monospace; font-variant-ligatures: none; line-height: 1; }
 
 kbd > kbd {
   display: inline-block;
@@ -234,10 +239,21 @@ dfn, .small-caps { font-style: normal; font-variant: small-caps; }
 
 /* Special Cases */
 
+.file-edit { font-family: "LiberationMono", monospace; font-size: .8rem;
+             background: var(--bg-color-header); margin-bottom: .2rem; padding: 0;
+             max-width: 80ch; overflow-x: auto; }
+.file-edit::before {
+  content: 'FILE';
+  color: #fff;
+  background-color: var(--gentoo-primary-purple);
+  margin: 0 1rem 0 0;
+  padding: .2rem;
+}
+
 .post-list      { margin-left: 0; padding: 0; list-style: none; }
 .post-list > li { margin-top: 1em; }
 .post-list h2   { margin-top: .25rem; }
-.post-list a    { color: var(--h2-title-text-color);
+.post-list a    { color: var(--primary-blue-color);
                   text-decoration: none;
                   display: block;}
 .post-list a:hover { color: var(--h2-title-text-hover-color);
@@ -251,7 +267,7 @@ dfn, .small-caps { font-style: normal; font-variant: small-caps; }
                          font-size-adjust: 45%; display: block; margin: 0; }
 .blogroll-list h2   { margin-top: .25rem; }
 .blogroll-list p    { margin: .25rem 0; }
-.blogroll-list a    { color: var(--h2-title-text-color);
+.blogroll-list a    { color: var(--primary-blue-color);
                       text-decoration: none; display: block; }
 .blogroll-list a:hover { color: var(--h2-title-text-hover-color);
                          text-decoration: underline; }

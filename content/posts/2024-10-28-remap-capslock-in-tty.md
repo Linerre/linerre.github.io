@@ -10,7 +10,7 @@ These days I tend to ssh to my Gentoo machine more and more, so most of the time
 Jump to the last section if you are only curious about what I ended up with.
 
 ## My first attempt
-The first thing that occurred to me was: let me ask Ai (in this case, Claude) to quickly walk me through mapping CapsLock to Escape in tty:
+The first thing that occurred to me was: let me ask AI (in this case, Claude) to quickly walk me through mapping CapsLock to Escape in tty:
 
 When in a tty (Linux), how can I map Caps lock to escape? {.claude-prompt}
 
@@ -18,29 +18,29 @@ When in a tty (Linux), how can I map Caps lock to escape? {.claude-prompt}
 
 For a TTY (virtual console) in Linux, you can use the `loadkeys` command with a custom keymap. Here's how to do it:
 
-1. Create a temporary keymap file
-   ```console
-   $ cat > /tmp/caps2esc.map << 'EOF'
-   keymaps 0-127
-   keycode 58 = Escape
-   EOF
-   ```
+Create a temporary keymap file
+```console
+$ cat > /tmp/caps2esc.map << 'EOF'
+keymaps 0-127
+keycode 58 = Escape
+EOF
+```
 
-2. Load the keymap
-   ```console
-   $ loadkeys /tmp/caps2esc.map
-   ```
+Load the keymap
+```console
+$ loadkeys /tmp/caps2esc.map
+```
 
-3. Optional: To make it permanent, copy to a persistent location
-   ```console
-   $ sudo cp /tmp/caps2esc.map /usr/local/share/kbd/keymaps/
-   $ sudo loadkeys /usr/local/share/kbd/keymaps/caps2esc.map
-   ```
+Optional: To make it permanent, copy to a persistent location
+```console
+$ sudo cp /tmp/caps2esc.map /usr/local/share/kbd/keymaps/
+$ sudo loadkeys /usr/local/share/kbd/keymaps/caps2esc.map
+```
 
-4. Add to /etc/rc.local for persistence across reboots:
-   ```console
-   $ sudo loadkeys /usr/local/share/kbd/keymaps/caps2esc.map
-   ```
+Add to /etc/rc.local for persistence across reboots:
+```console
+$ sudo loadkeys /usr/local/share/kbd/keymaps/caps2esc.map
+```
 
 This will immediately remap your Caps Lock key to Escape. Note that:
 
@@ -54,10 +54,10 @@ Would you like me to explain any part of this in more detail?
 
 I tried it out in a slightly different way:
 
-1.  as the root user, create the `~/caps2esc.map` file with the suggested content
-2.  `loadkyes` immediately after creating the above file
+1. as the root user, create the `~/caps2esc.map` file with the suggested content
+2. `loadkyes` immediately after creating the above file
 
-It did work but if I want to make it persistent, I need to follow the instruction in the above 2nd option.  The thing that stopped me from doing so was I didn't find a `kbd/keymaps` directory under `/usr/local/share`.  Clearly, Claude assumed that.  Since I didn't tell it which Linux distro I'm using, it's fine.
+It did work but if I want to make it persistent, I need to follow the instruction in the above 2nd option.  The thing that stopped me from doing so was that I didn't find any directory named `kbd/keymaps` under `/usr/local/share`.  Clearly, Claude assumed that.  Since I didn't tell it which Linux distro I'm using, it's fine.
 
 
 ## My second attempt
@@ -76,17 +76,17 @@ Running loadkeys from .bash<sub>profile</sub> would try to remap keys every time
 
 Instead, if you want to make this permanent, I recommend either:
 
-1. Store the keymap in a persistent location:
+Store the keymap in a persistent location:
 
-    ```console
-    $ cp /tmp/caps2esc.map /usr/local/share/kbd/keymaps/
-    ```
+```console
+$ cp /tmp/caps2esc.map /usr/local/share/kbd/keymaps/
+```
 
-2. Then add the loadkeys command to `/etc/rc.local` (which runs once at boot time):
+Then add the loadkeys command to `/etc/rc.local` (which runs once at boot time):
 
-    ```console
-    $ loadkeys /usr/local/share/kbd/keymaps/caps2esc.map
-    ```
+```console
+$ loadkeys /usr/local/share/kbd/keymaps/caps2esc.map
+```
 
 Or use systemd by creating a one-time service that runs at boot.
 
@@ -108,32 +108,29 @@ You have two good options:
 
 If you want to keep your custom keymap separate:
 
-1. Create the keymap in a persistent location
+Create the keymap in a persistent location
 
-    ```console
-    $ mkdir -p /usr/local/share/keymaps
-    $ cp /tmp/caps2esc.map /usr/local/share/keymaps/
-    ```
+```console
+$ mkdir -p /usr/local/share/keymaps
+$ cp /tmp/caps2esc.map /usr/local/share/keymaps/
+```
 
-2. Edit `/etc/conf.d/keymaps`:
-   ```
-   keymap=/usr/local/share/keymaps/caps2esc
-   ```
+Edit `/etc/conf.d/keymaps`:
+
+/etc/conf.d/keymaps {.file-edit}
+```
+keymap=/usr/local/share/keymaps/caps2esc
+```
 
 Or, simpler approach: just add the remap directive directly to your existing keymap by editing `/etc/conf.d/keymaps`:
-1. Set your regular keymap
 
-    ```
-    keymap="us"  # or whatever your current keymap is
-    ```
-
-2. Add the caps lock remap
-
-    ```
-    windowkeys="yes"  # if not already set
-    extended_keymaps="caps2esc"
-    keymap_custom="keycode 58 = Escape"
-    ```
+/etc/conf.d/keymaps {.file-edit}
+```
+keymap="us"  # or whatever your current keymap is
+windowkeys="yes"  # if not already set
+extended_keymaps="caps2esc"
+keymap_custom="keycode 58 = Escape"
+```
 
 The second approach is more "Gentoo-like" as it uses the built-in configuration system. Would you like me to explain the differences between these approaches in more detail?
 
@@ -148,11 +145,12 @@ for the second approach, how does `extended_keymaps="caps2esc"` work? I don't se
 
 ### Claude response
 
-Ah, I apologize for my mistake. You're absolutely right - I included `extended_keymaps="caps2esc"` incorrectly. This setting is for loading predefined keymaps from `/usr/share/keymaps/`, and "caps2esc" isn't a standard keymap.
+Ah, I apologize for my mistake. You're absolutely right. I included `extended_keymaps="caps2esc"` incorrectly. This setting is for loading predefined keymaps from `/usr/share/keymaps/`, and "caps2esc" isn't a standard keymap.
 
 For your case, you only need:
+
+/etc/conf.d/keymaps {.file-edit}
 ```
-# In /etc/conf.d/keymaps
 # Set your regular keymap
 keymap="us"  # or whatever your current keymap is
 
@@ -187,8 +185,7 @@ $ dumpkeys > /usr/local/share/keymaps/personal.map
 ```
 Edit the map to change Caps Lock to Escape: `keycode 58 = Escape`
 
-Then in `/etc/conf.d/keymaps`:
-
+/etc/conf.d/keymaps {.file-edit}
 ```
 keymap="/usr/local/share/keymaps/personal"
 ```
@@ -207,41 +204,44 @@ Alright, it seems Claude was at the end of its rope. Surprised? My prompts were 
 
 It turned out that the [Wiki](https://wiki.gentoo.org/wiki/Keyboard_layout_switching#Text-mode) already shows the correct steps, just in a confusing order.  To remap CapsLock to Escape in Linux tty, follow the below steps:
 
-1.  Use an editor (probably Emacs, vi[m] or nano) to create a `<keymap>.map` file. `<keymap>` can be an arbitrary name but it's better to use an informative one, such as `caps2esc` in this case
-2.  In the newly created file, add the following content:
+Use an editor (probably Emacs, vi[m] or nano) to create a `<keymap>.map` file. `<keymap>` can be an arbitrary name but it's better to use an informative one, such as `caps2esc` in this case
 
-    ```
-    include "us.map"
-    keycode  58 = Escape
-    ```
+In the newly created file, add the following content:
 
-3.  Compress the file and put this file under `/usr/share/keymaps/i386/qwerty/`.
+/path/to/caps2esc.map {.file-edit}
 
-    ```console
-    $ gzip caps2esc.map
-    $ cp caps2esc.map /usr/share/keymaps//i386/qwerty/
-    ```
+```
+include "us.map"
+keycode  58 = Escape
+```
 
-    Note, this is a Gentoo specific path.  Consult your distro's manual or wiki for the appropriate path.
+Compress the file
 
-4.  In the file `/etc/conf.d/keymaps`, use the newly created map above
+```console
+$ gzip caps2esc.map
+$ cp caps2esc.map /usr/share/keymaps//i386/qwerty/
+```
+Put this file under `/usr/share/keymaps/i386/qwerty/`.
+   Note, this is a Gentoo specific path.  Consult your distro's manual or wiki for the appropriate path.
 
-    ```diff
-    -keymap=""
-    +keymap="caps2esc.map"
-    ```
+In the file `/etc/conf.d/keymaps`, use the newly created map above
 
-5.  Restart the keymap service. Since I'm using OpenRC:
+/etc/conf.d/keymaps {.file-edit}
+```
+keymap="caps2esc.map"
+```
 
-    ```console
-    rc-service keymaps restart
-    rc-update add keymaps boot # redundant but harmless
-    ```
-By "confusing order", I mean steps 1-3 are in Section [Custom keymap](https://wiki.gentoo.org/wiki/Keyboard_layout_switching#Custom_keymap) that appears later than step 4 in Section [OpenRc](Https://wiki.gentoo.org/wiki/Keyboard_layout_switching#OpenRC).
+Restart the keymap service. Since I'm using OpenRC:
+
+```console
+$ rc-service keymaps restart
+$ rc-update add keymaps boot # redundant but harmless
+```
+By "confusing order", I mean steps 1-3 are in Section [Custom keymap](https://wiki.gentoo.org/wiki/Keyboard_layout_switching#Custom_keymap) which appears after step 4 in Section [OpenRC](Https://wiki.gentoo.org/wiki/Keyboard_layout_switching#OpenRC).
 
 The entire trial-and-error process reminds me of the Queen's *Raido Gaga* which sings:
 
-> You had your time, you had the power,
+> You had your time, you had the power.
 > You've yet to have your finest hour.
 > Raido, someone still loves you.
 
