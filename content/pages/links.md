@@ -23,8 +23,11 @@ Bob Nystrom
 Bozhidar Batsov: (think)
 : <https://batsov.com/>
 
-CatCoding (a.k.a Yukang)
+CatCoding (a.k.a. Yukang)
 : <https://catcoding.me/>
+
+Colin Woodbury (a.k.a. Fosskers)
+: <https://www.fosskers.ca/>
 
 eshan ramesh
 : <https://esrh.me/>
@@ -86,6 +89,9 @@ Sam James (thesamesam)
 
 tarneo
 : <https://tarneo.fr/>
+
+tonsky
+: <https://tonsky.me/>
 
 tsoding
 : <https://www.youtube.com/tsoding>
