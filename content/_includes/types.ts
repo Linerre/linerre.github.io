@@ -5,6 +5,6 @@ export interface IBItem {
   url: string,
   domain: string,
   // quote or comment
-  qorc: string,
+  qorc?: string,
   author?: string,
 }

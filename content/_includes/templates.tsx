@@ -183,9 +183,7 @@ export function Blogroll({items}: {items: IBItem[]}) {
         <span class="meta">
           <Time date={date} />, {domain}
         </span>
-        <p>
-          {qorc}
-        </p>
+        {qorc && <p> {qorc} </p>}
         {author && <span class="author">by {author}</span>}
       </li>
     );
