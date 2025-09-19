@@ -14,6 +14,9 @@ Alex Yang
 Andrew Kelley
 : <https://andrewkelley.me/>
 
+Annoying Technology
+: <https://annoying.technology/>
+
 Bisqwit
 : <https://www.youtube.com/@Bisqwit>
 

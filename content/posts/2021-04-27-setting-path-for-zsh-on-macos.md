@@ -3,7 +3,7 @@ title: Confusing Zsh $PATH on macOS
 date: 2021-04-27
 summary: It's something only Apple can do.
 ---
-It is recommended that you read it on my [Gist](https://gist.github.com/Linerre/f11ad4a6a934dcf01ee8415c9457e7b2) instead, because the comments and discussions are pretty informative.
+It is recommended that you read this post on my [Gist](https://gist.github.com/Linerre/f11ad4a6a934dcf01ee8415c9457e7b2) instead, because there are pretty informative comments and discussions.
 
 ## TL;DR
 Read the sections on `path_helper` and see if you like Apple's way of managing your `PATH`.
@@ -20,7 +20,7 @@ In doing so, you manage the `PATH` in arguably one place and use it everywhere (
 
 For Linux users, however, the above approach may turn out to be a pain in the neck.
 
-Note, I stopped using macOS several years ago and haven't ever tried it since then. Apple macOS may have changed.
+Note, I _stopped_ using macOS several years ago and haven't ever tried it since then. Apple macOS may have changed?
 
 ## Zsh initializations
 I'm not going to repeat what has alreay  been well documented:
@@ -257,6 +257,7 @@ On macOS, for [bash](https://github.com/rbenv/rbenv/wiki/Unix-shell-initializati
 
 Since macOS always opens a login shell when you start a new terminal window, the `/etc/profile` always gets sourced. This file is very simple:
 
+/etc/profile {.file-edit}
 ```bash
 # System-wide .profile for sh(1)
 
@@ -286,17 +287,18 @@ For [Zsh](https://github.com/rbenv/rbenv/wiki/Unix-shell-initialization#zsh), th
 1. `/etc/zshenv` (no longer exists on macOS by default)
 2. `~/.zshenv`
 3. **login** mode:
-    1. `/etc/zprofile` (calling `path_helper`)
-    2. `~/.zprofile`
+   1. `/etc/zprofile` (calling `path_helper`)
+   2. `~/.zprofile`
 4. **interactive**:
-        `/etc/zshrc`
-        `~/.zshrc`
+   1. `/etc/zshrc`
+   2. `~/.zshrc`
 5. **login** mode:
-       `/etc/zlogin`
-        `~/.zlogin`
+   1. `/etc/zlogin`
+   2. `~/.zlogin`
 
 If you, like me, set `$PATH` in `~/.zshenv`, it gets sourced first and `$PATH` then becomes something like:
 
+~/.zshenv {.file-edit}
 ```
 # user may append and prepend their paths to the default system one
 /some/path:/usr/local/bin:/usr/bin:/bin/....:/some/other/path
@@ -314,15 +316,11 @@ As I have shown in the beginning ... and this, well, breaks things.
 Here is an article on **login shells**: [What is Login Shell in Linux?](https://linuxhandbook.com/login-shell/), just in case this confuses you.
 
 ## Solutions
-The key lies in the idea that we should start appending or prepending the `$PATH` after `path_helper` has been called.
+The key lies in the idea that we should start appending or prepending the `$PATH` _after_ `path_helper` has been called.
 
 Using bash, that would be somewhere in `~/.bashrc` or `~/.bash_profile`.
 
 Using Zsh, on macOS, avoid `~/.zshenv` and choose `~/.zshrc` or `~/.zprofile` instead. In fact, better to replace `~/.zshenv` with `~/.zprofile` so that both Linux and macOS will use the same files with the very same config.
-
-**NOTE**:
-
-You might have symbolic links to `~/.zshrc` or so, just as I did. After you make proper changes, remember also to fix the symbolic links so that they keep pointing to the right files. In my case, I decided to switch to `~/.zshrc`, but I forgot changing the previous `~/.zshenv@` (a symlink), so my `$PATH` didn't look right!
 
 What if I insist on sticking to *Zsh User Guide*? See this message from Zsh mailing list: [Re: ~/.zshenv or ~/.zprofile](https://www.zsh.org/mla/users/2003/msg00600.html)
 
