@@ -33,7 +33,7 @@ function Base({ children, metas, path, extra_css }: {
         <header>
           <nav>
             <div class="sitename">
-              <a  href="/"> { site_name } </a>
+              <a href="/"> { site_name } </a>
               <a href="mailto:zlinerre@gmail.com">
                 <FooterIcon name="email" />
               </a>
@@ -54,6 +54,8 @@ function Base({ children, metas, path, extra_css }: {
         <main>
           {children}
         </main>
+
+        <Footer />
       </body>
     </html>
   );
@@ -75,6 +77,27 @@ export function Time({ date, className = undefined }: {
   });
   const machine = yyyy_mm_dd(date);
   return <time class={className} datetime={machine}>{human}</time>;
+}
+
+function Footer() {
+  return (
+    <footer>
+      <p>
+        <a href="/feed.xml">
+          <FooterIcon name="rss" />
+          Subscribe
+        </a>
+        <a href="mailto:zlinerre@gmail.com">
+          <FooterIcon name="email" />
+          Contact
+        </a>
+        <a href="https://github.com/Linerre">
+          <FooterIcon name="github" />
+          Linerre
+        </a>
+      </p>
+    </footer>
+  );
 }
 
 function FooterIcon({ name }: { name: string }) {
