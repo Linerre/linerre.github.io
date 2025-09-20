@@ -15,7 +15,8 @@ function sectionWrapper(pages: Page[]) {
       let nextSibling = h2.nextSibling;
 
       while(nextSibling && nextSibling.nodeName !== 'H2'
-        && nextSibling.nodeName !== 'SECTION') {
+        && nextSibling.nodeName !== 'SECTION'
+        && nextSibling.nodeName !== 'ASIDE') {
         nexts.push(nextSibling);
         nextSibling = nextSibling.nextSibling;
       }
