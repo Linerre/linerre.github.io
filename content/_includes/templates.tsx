@@ -115,19 +115,20 @@ export function Post({title, date, children, footnotes}: {
   footnotes: any[],
 }) {
 
-  // see: https://github.com/lumeland/markdown-plugins/blob/main/footnotes/demo/_includes/default.vto
   const ft_block = (footnotes: any[]) => {
     if (footnotes && footnotes.length > 0) {
       return (
         <aside role="note" class="footnotes">
           <ol>
             {footnotes.map((note) => {
-              <li key={note.id} id={ note.id }>
-                { note.content }
-                <a href={`#${note.refId}`}
-                  class="footnote-backref">↩
-                </a>
-              </li>
+              return (
+                <li key={note.id} id={note.id}>
+                  <div>
+                    {{ __html: note.content }}
+                    <a href={`#${note.refId}`} class="footnote-backref">↩</a>
+                  </div>
+                </li>
+              );
             })}
           </ol>
         </aside>
@@ -149,7 +150,7 @@ export function Post({title, date, children, footnotes}: {
           <Time className="meta" date={date} />
         </header>
         { children }
-        {ft_block(footnotes)}
+        { ft_block(footnotes) }
       </article>
 
     </Base>
@@ -158,11 +159,15 @@ export function Post({title, date, children, footnotes}: {
 
 export function PostList({posts}: {posts: Page[]}) {
   const postList = posts.map((post) => {
+    const { title, date, column, summary, url } = post;
     return (
-      <li key={post.title}>
-        <Time className="meta" date={post.date} />
-        <h2><a href={post.url}>{post.title}</a></h2>
-        {post.summary && <p>{post.summary}</p>}
+      <li key={title}>
+        <div className="meta">
+          <Time date={date} />
+          {column && <span>{column}</span>}
+        </div>
+        <h2><a href={url}>{title}</a></h2>
+        {post.summary && <p>{summary}</p>}
       </li>
     );
   });
