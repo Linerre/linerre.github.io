@@ -74,6 +74,9 @@ matklad
 Michał Górny
 : <https://blogs.gentoo.org/mgorny/author/mgorny/>
 
+Phil Eaton
+: <https://eatonphil.com/>
+
 Rick Hickey
 : <https://youtube.com/playlist?list=PLZdCLR02grLrEwKaZv-5QbUzK0zGKOOcr&si=PzWQWx5rdq84dsDx>
 

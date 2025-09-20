@@ -287,15 +287,11 @@ dfn, .small-caps { font-style: normal; font-variant: small-caps; }
 
 .hl-keyword { color: var(--code-keyword-foreground); }
 .hl-literal { color: var(--code-const-foreground); }
-/* .hl-type    { color: #0086B3; } */
 .hl-tag     { color: #000080; }
 .hl-title { color: var(--code-function-foreground); }
 .hl-title.class_ { color: var(--code-default-foreground); }
-
 .hl-title.function_ { color: var(--code-function-foreground); }
 .hl-comment { color: var(--code-comment-foreground); }
-/* .hl-title.class_{ color: #445588; } */
-/* .hl-built_in, .hl-meta { color: #3c5d5d; font-weight: bold; } */
 .hl-built_in { color: var(--code-keyword-foreground); }
 .hl-meta { color: #3c5d5d; }
 .hl-number { color: var(--code-number-foreground); }
@@ -304,3 +300,6 @@ dfn, .small-caps { font-style: normal; font-variant: small-caps; }
 .hl-subst { color: rgba(0, 0, 0, .9); }
 .hl-attr, .hl-symbol { color: #008080; }
 .hl-line { background-color: #ffc; }
+/* .hl-type    { color: #0086B3; } */
+/* .hl-title.class_{ color: #445588; } */
+/* .hl-built_in, .hl-meta { color: #3c5d5d; font-weight: bold; } */
