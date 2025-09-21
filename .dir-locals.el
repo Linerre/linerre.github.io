@@ -2,4 +2,5 @@
  (tsx-ts-mode . ((typescript-ts-mode-indent-offset . 2)))
  (jsx-ts-mode . ((typescript-ts-mode-indent-offset . 2)))
  (typescript-ts-mode . ((typescript-ts-mode-indent-offset . 2)))
- (javascript-ts-mode . ((typescript-ts-mode-indent-offset . 2))))
+ (javascript-ts-mode . ((typescript-ts-mode-indent-offset . 2)))
+ (js-mode . ((js-indent-level . 2))))

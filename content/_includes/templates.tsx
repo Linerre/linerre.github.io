@@ -123,10 +123,8 @@ export function Post({title, date, children, footnotes}: {
             {footnotes.map((note) => {
               return (
                 <li key={note.id} id={note.id}>
-                  <div>
-                    {{ __html: note.content }}
-                    <a href={`#${note.refId}`} class="footnote-backref">↩</a>
-                  </div>
+                  {{ __html: note.content }}
+                  <a href={`#${note.refId}`} class="footnote-backref">↩</a>
                 </li>
               );
             })}

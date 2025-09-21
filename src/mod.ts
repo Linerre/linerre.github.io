@@ -8,13 +8,14 @@ import feed, { Options as FeedOptions } from 'lume/plugins/feed.ts';
 import { attrs } from 'npm:@mdit/plugin-attrs';
 import toc from 'lume_markdown_plugins/toc.ts';
 import footnotes from 'lume_markdown_plugins/footnotes.ts';
-import clj from 'npm:highlight.js/lib/languages/clojure';
 import hs from 'npm:highlight.js/lib/languages/haskell';
 import py from 'npm:highlight.js/lib/languages/python';
 import rs from 'npm:highlight.js/lib/languages/rust';
 import ts from 'npm:highlight.js/lib/languages/typescript';
+import clj from 'npm:highlight.js/lib/languages/clojure';
 import 'lume/types.ts';
 
+// import clj from './languages/clojure.js';
 import precode from './plugins/precode.ts';
 import section from './plugins/section.ts';
 
