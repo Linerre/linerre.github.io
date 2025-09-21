@@ -204,7 +204,7 @@ Note, the prepending is done in reversed order in order to retain the original o
 
 ## Leetcode 25: Reverse Nodes in k-Group
 
-While doing the above Problem 92, it occurred to me that what if I could not only have a `prepend-node` helper, but also a `prepend-list` one that inserting an entire linked list at the head of the current one?
+While doing the above Problem 92, it occurred to me that I could not only have a `prepend-node` helper, but also a `prepend-list` that inserts an entire linked list before the head of current list:
 
 ```clojure
 (defn prepend-list [node lst]
@@ -218,7 +218,7 @@ While doing the above Problem 92, it occurred to me that what if I could not onl
              (.next curn)))))
 ```
 
-It is like we push the nodes onto a stack and then pop them one by one when prepending. And this stack-like approach is the key to the current problem.
+It is like we push the nodes onto a stack and then pop them one by one when prepending. And this stack-like approach is the key to the solution for the current problem.
 
 Now, for each _k_ nodes, we need to reverse them.  With the stack-like behavior in the mind, if we take while building a new list (in Clojure we just have to), isn't it sweet that we will just get a reversed list of the taken-out nodes?
 
@@ -259,7 +259,7 @@ With these helpers, let's break the problem into the following steps:
 3. use `take-n-nodes-reverse` to reverse the k-node groups
 4. prepend the reversed groups to the remaining nodes
 
-Sounds good? Actually, the reality is ugly: this is a singly linked list and there is no easy way for quick access to the remaining (tail) nodes.  It is however trivial to access the nodes from and near heads. Aha, let's reverse the list at the beginning and get the k-node groups already reversed as a bonus!
+Sounds good? Actually, the reality is ugly: this is a singly linked list and there is no easy way for quick access to the remaining (tail) nodes.  It is however trivial to access the nodes from and/or near the head. Aha, let's reverse the list at the beginning and we will get the k-node groups already reversed. A bonus!
 
 The process looks roughly like below:
 
