@@ -217,7 +217,7 @@ export function Blogroll({items}: {items: IBItem[]}) {
 
   return (
     <Base>
-      <p>Readings worth re-reading.</p>
+      <p>Worth reading and re-reading.</p>
       <ul className="blogroll-list">
         { rollList }
       </ul>

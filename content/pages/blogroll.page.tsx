@@ -33,4 +33,11 @@ export const rollList: IBItem[] = [
     qorc: 'You can await if and only if you are within async.',
     author: 'Bob Nystrom'
   },
+  { date: new Date('2021-12-18'),
+    title: 'LISP with GC in 436 bytes',
+    url: 'https://justine.lol/sectorlisp2/',
+    domain: 'justine.lol',
+    qorc: 'Mind-blowing',
+    author: 'Justine'
+  }
 ];
