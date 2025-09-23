@@ -119,6 +119,7 @@ export function Post({title, date, children, footnotes}: {
     if (footnotes && footnotes.length > 0) {
       return (
         <aside role="note" class="footnotes">
+          <hr/>
           <ol>
             {footnotes.map((note) => {
               return (
