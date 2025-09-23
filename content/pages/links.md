@@ -5,6 +5,8 @@ layout: links.tsx
 
 The inspirations that I used to simply bury in my browser's favorites. No longer!
 
+### People
+
 Alex Chi Z.
 : <https://skyzh.dev/>
 
@@ -41,6 +43,9 @@ Fabrice Bellard
 Felix Yang (a.k.a. 肥猫)
 : <https://felixc.at/>
 
+Fogus (author of *Joy of Clojure*)
+: <https://www.fogus.me/>
+
 hemashushu (low-level & programming languages)
 : <https://hemashushu.github.io/>
 
@@ -59,6 +64,9 @@ joshua stein
 Jonathan Blow
 : <https://www.twitch.tv/j_blow>
 
+Justine Tunney
+: <https://justine.lol/>
+
 lilydjwg (a.k.a 依云)
 : <https://blog.lilydjwg.me/>
 
@@ -73,6 +81,9 @@ matklad
 
 Michał Górny
 : <https://blogs.gentoo.org/mgorny/author/mgorny/>
+
+Peter Novrig
+: <https://norvig.com/>
 
 Phil Eaton
 : <https://eatonphil.com/>
@@ -105,8 +116,31 @@ tsoding
 without.boats
 : <https://without.boats/>
 
-yhetil.org (unofficial mirror of emacs-devel mailing list)
-: <https://yhetil.org/emacs-devel/>
 
 Yihui Xie
 : <https://yihui.org/>
+
+
+### Community
+Hyperpolygot
+: <https://hyperpolyglot.org/>
+
+Learn X in Y minutes
+: <https://learnxinyminutes.com/>
+
+Rosetta Code Category
+: <https://rosettacode.org/wiki/Category:Solutions_by_Programming_Task>
+
+Syntax Across Languages
+: <https://rigaux.org/language-study/syntax-across-languages/>
+
+yhetil.org (unofficial mirror of emacs-devel mailing list)
+: <https://yhetil.org/emacs-devel/>
+
+### Free Online Courses
+
+Full Stack Open
+: <https://fullstackopen.com/en/>
+
+OpenCS
+: <https://fitech101.aalto.fi/en>

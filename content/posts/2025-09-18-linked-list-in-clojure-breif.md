@@ -287,6 +287,8 @@ The second condition `(= l (+ m cnt))` might be redundant but I'm just too lazy 
 
 Even though it's fun to explore how Clojure handles linked lists, I'd say it also feels a bit awkward. While I'll continue to solve LeetCode-style problems with Clojure from time to time, I doubt I'll delve deeper into linked lists using the language.
 
+-------
+
 [^1]: This 10-year old post takes a Java-style approach but admits that modifying the node's pointers in place is "slightly dangerous":
 <https://maxcountryman.github.io/2014/01/16/data-structures-clojure-singly-linked-list.html>
 [^2]: `left` and `right` are node positions and they are all 1-indexed

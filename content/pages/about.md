@@ -9,7 +9,7 @@ I'm Zhiren Lin. When studying in Australia, Aussies tend to call me **Ziren** an
 I'm mostly interested in the following subjects:
 - GNU/Linux (Arch, Gentoo, NixOS)
 - Emacs (along with some editor-specific things)
-- (Functional) Programming Languages and Compilers
+- (Functional) Programming Languages, Compilers, Type and Category Theory
 - Blockchain and decentralized Web3 applications
 - Web technologies (Deno, Node.js, TypeScript, CSS, Standard Web APIs, etc)
 - Distributed Systems and Cloud Computing (I'm learning AWS)
