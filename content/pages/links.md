@@ -61,6 +61,9 @@ graydon2
 joshua stein
 : <https://jcs.org/>
 
+Jean Niklas L'orange
+: <https://hypirion.com/musings>
+
 Jonathan Blow
 : <https://www.twitch.tv/j_blow>
 
