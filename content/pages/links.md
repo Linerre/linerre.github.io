@@ -124,7 +124,10 @@ Yihui Xie
 : <https://yihui.org/>
 
 
-### Community
+### Community & Resource
+Complexity Cheatsheet
+: <https://www.bigocheatsheet.com/>
+
 Hyperpolygot
 : <https://hyperpolyglot.org/>
 
@@ -140,7 +143,7 @@ Syntax Across Languages
 yhetil.org (unofficial mirror of emacs-devel mailing list)
 : <https://yhetil.org/emacs-devel/>
 
-### Free Online Courses
+### Free Online Course
 
 Full Stack Open
 : <https://fullstackopen.com/en/>
