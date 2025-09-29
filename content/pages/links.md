@@ -91,6 +91,9 @@ Peter Novrig
 Phil Eaton
 : <https://eatonphil.com/>
 
+Piglei
+: <https://www.piglei.com/>
+
 Rick Hickey
 : <https://youtube.com/playlist?list=PLZdCLR02grLrEwKaZv-5QbUzK0zGKOOcr&si=PzWQWx5rdq84dsDx>
 
@@ -119,9 +122,11 @@ tsoding
 without.boats
 : <https://without.boats/>
 
-
 Yihui Xie
 : <https://yihui.org/>
+
+マリウス (Network, Gentoo Linux, OpenBSD)
+: <https://マリウス.com/>
 
 
 ### Community & Resource
