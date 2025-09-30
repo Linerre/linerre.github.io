@@ -26,7 +26,7 @@ Original address: 1680485275
 Reversed address: 583859661
 ```
 
-If the result is what we care about only, this is great.  But if we want to manipulate the same nodes of a linked list, as far as my level of Clojure can go, it seems impossible[^1].  This also makes it fairly difficult (if not impossible) for Leetcode to support Clojure when it comes to linked list problems.  Indeed, any problems that expect mutating in-memory data in place will likely cause troubles. Besides, Leetcode sometimes explicitly prohibits this, as [Leetcode 25][4] mentions:
+If the result is what we care about only, this is great.  But if we want to manipulate the same nodes of a linked list in the memory, as far as my level of Clojure can go, it seems impossible[^1].  This also makes it fairly difficult (if not impossible) for Leetcode to support Clojure when it comes to linked list problems.  Indeed, any problems that expect mutating in-memory data in place will likely cause troubles. Besides, Leetcode sometimes explicitly prohibits this, as [Leetcode 25][4] mentions:
 
 > You may not alter the values in the list's nodes, only nodes themselves may be changed.
 

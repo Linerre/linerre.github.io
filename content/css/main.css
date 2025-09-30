@@ -51,6 +51,7 @@
   --code-function-foreground: #3465a4;
   --code-comment-foreground: #b35000;
   --code-number-foreground: var(--chacha-green-5);
+  --code-string-foreground: var(--chacha-green-5);
 
   /* space */
   --line-height: 1.5rem;
