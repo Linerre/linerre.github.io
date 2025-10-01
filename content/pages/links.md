@@ -70,6 +70,9 @@ Jonathan Blow
 Justine Tunney
 : <https://justine.lol/>
 
+ksqsf
+: <https://ksqsf.moe>
+
 lilydjwg (a.k.a 依云)
 : <https://blog.lilydjwg.me/>
 
@@ -132,6 +135,9 @@ Yihui Xie
 ### Community & Resource
 Complexity Cheatsheet
 : <https://www.bigocheatsheet.com/>
+
+Crafting Interpreters
+: <https://craftinginterpreters.com>
 
 Hyperpolygot
 : <https://hyperpolyglot.org/>
