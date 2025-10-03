@@ -34,6 +34,9 @@ CatCoding (a.k.a. Yukang)
 Colin Woodbury (a.k.a. Fosskers)
 : <https://www.fosskers.ca/>
 
+David Heinemeier Hansson (DHH)
+: <https://world.hey.com/dhh>
+
 eshan ramesh
 : <https://esrh.me/>
 
@@ -133,11 +136,9 @@ Yihui Xie
 
 
 ### Community & Resource
+
 Complexity Cheatsheet
 : <https://www.bigocheatsheet.com/>
-
-Crafting Interpreters
-: <https://craftinginterpreters.com>
 
 Hyperpolygot
 : <https://hyperpolyglot.org/>
@@ -153,6 +154,23 @@ Syntax Across Languages
 
 yhetil.org (unofficial mirror of emacs-devel mailing list)
 : <https://yhetil.org/emacs-devel/>
+
+
+### Free Online Book
+
+Rust Atomics and Locks by Mara Bos
+: <https://marabos.nl/atomics/>
+
+Brave Clojure
+: <https://www.braveclojure.com/>
+
+Crafting Interpreters
+: <https://craftinginterpreters.com>
+
+Green Tea Press (by Allen B. Downey)
+: <https://greenteapress.com/wp/>
+
+
 
 ### Free Online Course
 
