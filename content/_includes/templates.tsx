@@ -40,6 +40,9 @@ function Base({ children, metas, path, extra_css }: {
               <a href="https://github.com/Linerre">
                 <FooterIcon name="github" />
               </a>
+              <a href="https://x.com/giftboiling">
+                <FooterIcon name="twitter" />
+              </a>
               <a href="/feed.xml">
                 <FooterIcon name="rss" />
               </a>
@@ -94,6 +97,10 @@ function Footer() {
         <a href="https://github.com/Linerre">
           <FooterIcon name="github" />
           Linerre
+        </a>
+        <a href="https://x.com/giftboiling">
+          <FooterIcon name="twitter" />
+          Errelin
         </a>
       </p>
     </footer>
