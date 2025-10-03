@@ -115,15 +115,8 @@ function FooterIcon({ name }: { name: string }) {
   );
 }
 
-export function Post({title, date, children, footnotes}: {
-  title: string,
-  date: Date,
-  children: any,
-  footnotes: any[],
-}) {
-
-  const ft_block = (footnotes: any[]) => {
-    if (footnotes && footnotes.length > 0) {
+function Footnote({ footnotes }: { footnotes: any[] }) {
+  if (footnotes && footnotes.length > 0) {
       return (
         <aside role="note" class="footnotes">
           <hr/>
@@ -139,9 +132,17 @@ export function Post({title, date, children, footnotes}: {
           </ol>
         </aside>
       );
-    }
+  } else {
     return null;
-  };
+  }
+}
+
+export function Post({title, date, children, footnotes}: {
+  title: string,
+  date: Date,
+  children: any,
+  footnotes: any[],
+}) {
 
   return (
     <Base>
@@ -156,7 +157,7 @@ export function Post({title, date, children, footnotes}: {
           <Time className="meta" date={date} />
         </header>
         { children }
-        { ft_block(footnotes) }
+        <Footnote footnotes={footnotes} />
       </article>
 
     </Base>
@@ -194,6 +195,7 @@ export function About({children, footnotes}: {
   return (
     <Base>
       { children }
+      <Footnote footnotes={footnotes} />
     </Base>
   );
 }
