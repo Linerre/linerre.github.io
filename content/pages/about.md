@@ -6,7 +6,7 @@ layout: about.tsx
 # About me
 I'm Zhiren Lin. When studying in Australia, Aussies tend to call me **Ziren** and some of my friends/mates prefer just **Lin**. On the Internet I often use **errenil**, pronounced as "error nil". The pronoun is he/him.
 
-I'm mostly interested in the following subjects (not particular order):
+I'm mostly interested in the following subjects (in no particular order):
 - GNU/Linux (mainly Arch, Gentoo, NixOS and occasionally, Fedora)
 - Emacs (along with some editor-specific things)
 - (Functional) Programming Languages, Compilers, Type and Category Theory

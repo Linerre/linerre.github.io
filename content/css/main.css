@@ -324,3 +324,9 @@ div.meta span { color: var(--chacha-red); text-transform: uppercase; font-size: 
 /* .hl-type    { color: #0086B3; } */
 /* .hl-title.class_{ color: #445588; } */
 /* .hl-built_in, .hl-meta { color: #3c5d5d; font-weight: bold; } */
+
+.token.keyword { color: var(--code-keyword-foreground); }
+.token.string { color: var(--code-string-foreground); }
+.token.number { color: var(--code-number-foreground); }
+.token.comment { color: var(--code-comment-foreground); }
+.token.function { color: var(--code-function-foreground); }
