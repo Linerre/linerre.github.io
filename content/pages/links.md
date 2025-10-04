@@ -70,6 +70,9 @@ Jean Niklas L'orange
 Jonathan Blow
 : <https://www.twitch.tv/j_blow>
 
+Julia Evans
+: <https://jvns.ca/>
+
 Justine Tunney
 : <https://justine.lol/>
 
@@ -146,6 +149,9 @@ Hyperpolygot
 Learn X in Y minutes
 : <https://learnxinyminutes.com/>
 
+questions (a wizard zines project)
+: <https://questions.wizardzines.com/>
+
 Rosetta Code Category
 : <https://rosettacode.org/wiki/Category:Solutions_by_Programming_Task>
 
@@ -176,6 +182,9 @@ Green Tea Press (by Allen B. Downey)
 
 Full Stack Open
 : <https://fullstackopen.com/en/>
+
+mess with dns
+: <https://messwithdns.net/>
 
 OpenCS
 : <https://fitech101.aalto.fi/en>

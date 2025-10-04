@@ -139,7 +139,7 @@ The tricky part for a singly linked list is (almost[^3]) always its head, as it 
         (recur (.next curn) (inc curp))))))
 ```
 
-It just feels criminal if we have `find-prev` without the corresponding `find-next`.  Agree with me? Hopefully.  For a singly linked list, its tail has a perfect mark: it has *no* next node (of course we are not talking about rings):
+It just feels criminal if we have `find-prev` without the corresponding `find-next`.  Agree with me? Hopefully.  For a singly linked list, its tail has a perfect mark: *no* next node
 
 ```clojure
 (defn find-next

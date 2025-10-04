@@ -28,4 +28,4 @@ You might have noticed I did not include my LinkedIn footprint on this site.  I 
 
 As the migration is in process and the site is undergoing reconstruction, more will be coming.
 
-[^1]: Should I fail to enable theme-toggling later, then expect a pinch of JavaScript
+[^1]: Should I fail to enable theme-toggling later or I want to add a few interactive stuff to the site, then expect a pinch of JavaScript
