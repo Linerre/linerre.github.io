@@ -210,7 +210,7 @@ export function Links({children}: {children: any}) {
 
 export function Blogroll({items}: {items: IBItem[]}) {
   const rollList = items.map((item) => {
-    const { date, title, author, url, domain, qorc } = item;
+    const { date, title, authors, url, domain, qorc } = item;
     return (
       <li key={title}>
         <h2>
@@ -220,7 +220,7 @@ export function Blogroll({items}: {items: IBItem[]}) {
           <Time date={date} />, {domain}
         </span>
         {qorc && <p> {qorc} </p>}
-        {author && <span class="author">by {author}</span>}
+        {authors && <span class="author">by {authors.join(', ')}</span>}
       </li>
     );
   });

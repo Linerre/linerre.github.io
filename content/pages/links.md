@@ -179,3 +179,9 @@ Full Stack Open
 
 OpenCS
 : <https://fitech101.aalto.fi/en>
+
+SQLZoo
+: <https://sqlzoo.net/wiki/SQL_Tutorial>
+
+Systemd by Example
+: <https://systemd-by-example.com/>

@@ -6,5 +6,5 @@ export interface IBItem {
   domain: string,
   // quote or comment
   qorc?: string,
-  author?: string,
+  authors?: string[],
 }
