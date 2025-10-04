@@ -22,6 +22,27 @@ function removeClass(ele: Element, cls: string | string[]): void {
   }
 }
 
+function removeAllAttrs(ele: Element): void {
+  const attrs = ele.getAttributeNames();
+  attrs.forEach(attr => {
+    ele.removeAttribute(attr);
+  });
+}
+
+
+function markFnCallAndDocString(code: Element): void {
+  let found = false;
+  for (const child of code.children) {
+    if (child.classList.contains('function'))
+      child.classList.add('call');
+
+    if (child.classList.contains('defname')
+      && child.nextElementSibling
+      && child.nextElementSibling.classList.contains('string'))
+      child.nextElementSibling.classList.add('doc')
+  }
+}
+
 // Process pre and code elements
 function cleanPreCodeClass(pages: Page[]): void {
   for (const page of pages) {
@@ -29,16 +50,14 @@ function cleanPreCodeClass(pages: Page[]): void {
     if (!doc) continue;
 
     for (const code of doc.querySelectorAll('code')) {
+      if (code.classList.contains('language-clojure'))
+        markFnCallAndDocString(code);
+
       code.removeAttribute('class');
     }
 
-    for (const span of doc.querySelectorAll('code span')) {
-      for (const cls of span.classList)
-        if (cls.includes('language-'))
-          span.classList.remove(cls);
-    }
-
     for (const pre of doc.querySelectorAll('pre')) {
+      removeAllAttrs(pre);
       const figure = doc.createElement('figure');
       const { classList } = figure;
       classList.add('code-block');

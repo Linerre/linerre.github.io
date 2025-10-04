@@ -50,8 +50,10 @@
   --code-keyword-foreground: #000000;
   --code-function-foreground: #3465a4;
   --code-comment-foreground: #b35000;
+  --code-const-foreground: var(--chacha-purple-2);
   --code-number-foreground: var(--chacha-green-5);
   --code-string-foreground: var(--chacha-green-5);
+  --code-doc-foreground: var(--chacha-teal);
 
   /* space */
   --line-height: 1.5rem;
@@ -327,6 +329,9 @@ div.meta span { color: var(--chacha-red); text-transform: uppercase; font-size: 
 
 .token.keyword { color: var(--code-keyword-foreground); }
 .token.string { color: var(--code-string-foreground); }
+.token.string.doc { color: var(--code-doc-foreground); }
 .token.number { color: var(--code-number-foreground); }
 .token.comment { color: var(--code-comment-foreground); }
-.token.function { color: var(--code-function-foreground); }
+.token.defname { color: var(--code-function-foreground); }
+.token.function { color: var(--code-default-foreground); }
+.token.boolean { color: var(--code-const-foreground); }
