@@ -335,3 +335,5 @@ div.meta span { color: var(--chacha-red); text-transform: uppercase; font-size: 
 .token.defname { color: var(--code-function-foreground); }
 .token.function { color: var(--code-default-foreground); }
 .token.boolean { color: var(--code-const-foreground); }
+/* for clike langs */
+span.token.keyword + span.token.function { color: var(--code-function-foreground); }
