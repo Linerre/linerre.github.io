@@ -204,7 +204,7 @@ Note, the prepending is done in reversed order in order to retain the original o
 
 ## Leetcode 25: Reverse Nodes in k-Group
 
-While doing the above Problem 92, it occurred to me that I could not only have a `prepend-node` helper, but also a `prepend-list` that inserts an entire linked list before the head of current list:
+While doing the above Problem 92, it occurred to me that I could not only have `prepend-node`, but also `prepend-list` that inserts an entire linked list before the head of current list:
 
 ```clojure
 (defn prepend-list [node lst]

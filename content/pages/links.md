@@ -79,11 +79,14 @@ Justine Tunney
 ksqsf
 : <https://ksqsf.moe>
 
-lilydjwg (a.k.a 依云)
-: <https://blog.lilydjwg.me/>
+Laisky
+: <https://blog.laisky.com>
 
 Leo3418
 : <https://leo3418.github.io/>
+
+lilydjwg (a.k.a 依云)
+: <https://blog.lilydjwg.me/>
 
 magnars
 : <https://magnars.com/>
@@ -143,11 +146,17 @@ Yihui Xie
 Complexity Cheatsheet
 : <https://www.bigocheatsheet.com/>
 
+Fediverse
+: <https://jointhefediverse.net/join?lang=en-us>
+
 Hyperpolygot
 : <https://hyperpolyglot.org/>
 
 Learn X in Y minutes
 : <https://learnxinyminutes.com/>
+
+Lemmy
+: <https://lemmyverse.net/>
 
 questions (a wizard zines project)
 : <https://questions.wizardzines.com/>
