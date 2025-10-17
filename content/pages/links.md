@@ -49,9 +49,6 @@ Felix Yang (a.k.a. 肥猫)
 Fogus (author of *Joy of Clojure*)
 : <https://www.fogus.me/>
 
-hemashushu (low-level & programming languages)
-: <https://hemashushu.github.io/>
-
 gingerBill
 : <https://www.gingerbill.org/>
 
@@ -61,8 +58,8 @@ glfmn.io
 graydon2
 : <https://graydon2.dreamwidth.org/>
 
-joshua stein
-: <https://jcs.org/>
+hemashushu (low-level & programming languages)
+: <https://hemashushu.github.io/>
 
 Jean Niklas L'orange
 : <https://hypirion.com/musings>
@@ -70,8 +67,17 @@ Jean Niklas L'orange
 Jonathan Blow
 : <https://www.twitch.tv/j_blow>
 
+Jules (Web frontend)
+: <https://julesblom.com/>
+
 Julia Evans
 : <https://jvns.ca/>
+
+Josh WComeau (Web Dev & React)
+: <https://www.joshwcomeau.com/>
+
+joshua stein
+: <https://jcs.org/>
 
 Justine Tunney
 : <https://justine.lol/>
@@ -128,6 +134,9 @@ tarneo
 tonsky
 : <https://tonsky.me/>
 
+Trish
+: <https://devlogs.xyz/>
+
 tsoding
 : <https://www.youtube.com/tsoding>
 
@@ -143,6 +152,9 @@ Yihui Xie
 
 ### Community & Resource
 
+Build Your Own X
+: <https://build-your-own-x.vercel.app/>
+
 Complexity Cheatsheet
 : <https://www.bigocheatsheet.com/>
 
@@ -151,6 +163,12 @@ Fediverse
 
 Hyperpolygot
 : <https://hyperpolyglot.org/>
+
+How I use AI
+: <https://labs.davidbauer.ch/how-i-use-ai/>
+
+Learn REST API design
+: <https://www.restapitutorial.com/>
 
 Learn X in Y minutes
 : <https://learnxinyminutes.com/>
@@ -161,8 +179,14 @@ Lemmy
 questions (a wizard zines project)
 : <https://questions.wizardzines.com/>
 
+restcookbook
+: <https://restcookbook.com/>
+
 Rosetta Code Category
 : <https://rosettacode.org/wiki/Category:Solutions_by_Programming_Task>
+
+SQLBolt
+: <https://sqlbolt.com/>
 
 Syntax Across Languages
 : <https://rigaux.org/language-study/syntax-across-languages/>
@@ -172,6 +196,8 @@ yhetil.org (unofficial mirror of emacs-devel mailing list)
 
 
 ### Free Online Book
+Build Your Own X From Scratch Books
+: <https://build-your-own.org/>
 
 Rust Atomics and Locks by Mara Bos
 : <https://marabos.nl/atomics/>
@@ -185,6 +211,8 @@ Crafting Interpreters
 Green Tea Press (by Allen B. Downey)
 : <https://greenteapress.com/wp/>
 
+How Query Engines Work
+: <https://howqueryengineswork.com/>
 
 
 ### Free Online Course
