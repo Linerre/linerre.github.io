@@ -185,9 +185,6 @@ restcookbook
 Rosetta Code Category
 : <https://rosettacode.org/wiki/Category:Solutions_by_Programming_Task>
 
-SQLBolt
-: <https://sqlbolt.com/>
-
 Syntax Across Languages
 : <https://rigaux.org/language-study/syntax-across-languages/>
 
@@ -225,6 +222,9 @@ mess with dns
 
 OpenCS
 : <https://fitech101.aalto.fi/en>
+
+SQLBolt
+: <https://sqlbolt.com/>
 
 SQLZoo
 : <https://sqlzoo.net/wiki/SQL_Tutorial>
