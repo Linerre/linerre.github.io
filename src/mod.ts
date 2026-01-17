@@ -14,6 +14,7 @@ import "npm:prismjs@1.30.0/components/prism-rust.js";
 import "npm:prismjs@1.30.0/components/prism-typescript.js";
 import "npm:prismjs@1.30.0/components/prism-c.js";
 import "npm:prismjs@1.30.0/components/prism-bash.js";
+import "npm:prismjs@1.30.0/components/prism-json.js";
 import './plugins/langs/clojure.js';
 import 'lume/types.ts';
 

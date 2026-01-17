@@ -56,7 +56,7 @@ curl https://bsc-mainnet.infura.io/v3/<YOUR-API-KEY> \
 
 Running the command and I got the below output (some folded for better display):
 
-```console
+```json
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -212,7 +212,7 @@ curl https://solana-mainnet.g.alchemy.com/v2/<YOUR-API-KEY> \
 
 The output (folded for better display) is as follows
 
-```
+```json
 {
   "jsonrpc": "2.0",
   "result": {
