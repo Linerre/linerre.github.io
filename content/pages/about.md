@@ -4,7 +4,7 @@ layout: about.tsx
 ---
 
 # About me
-I'm Zhiren. When studying in Australia, Aussies tend to call me **Ziren** and some of my ex colleagues call me **Leon**. On the Internet I often use **errenil**, pronounced as "error nil". The pronoun is he/him.
+I'm Ziren. On the Internet I often use **errenil**, pronounced as "error nil". The pronoun is he/him.
 
 I'm mostly interested in the following subjects (in no particular order):
 - GNU/Linux (mainly Arch, Gentoo, NixOS and occasionally, Fedora)
