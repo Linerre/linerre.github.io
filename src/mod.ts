@@ -8,12 +8,12 @@ import { attrs } from 'npm:@mdit/plugin-attrs';
 import toc from 'lume_markdown_plugins/toc.ts';
 import footnotes from 'lume_markdown_plugins/footnotes.ts';
 import prism from "lume/plugins/prism.ts";
-// import "npm:prismjs@1.30.0/components/prism-clojure.js";
 import "npm:prismjs@1.30.0/components/prism-haskell.js";
 import "npm:prismjs@1.30.0/components/prism-python.js";
 import "npm:prismjs@1.30.0/components/prism-rust.js";
 import "npm:prismjs@1.30.0/components/prism-typescript.js";
 import "npm:prismjs@1.30.0/components/prism-c.js";
+import "npm:prismjs@1.30.0/components/prism-bash.js";
 import './plugins/langs/clojure.js';
 import 'lume/types.ts';
 
