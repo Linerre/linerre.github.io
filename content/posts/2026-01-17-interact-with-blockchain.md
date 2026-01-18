@@ -24,7 +24,7 @@ The above explorers, though quite useful most of the time, cannot fit in all use
 As you dive deeper into blockchain ecosystems, you are likely to access chain data programmatically. To do so, you'll need at least:
 
 1. A private or public[^1] endpoint, which is basically a URL that accepts HTTP(S) requests with JSON data
-2. A library or SDK[^2] that has already implemented interface to act with blockchains
+2. A library or SDK[^2] that has already implemented interface to communicate with blockchains
 
 A private endpoint is usually provided by a RPC node provider such as [Alchemy][8], [Quicknode][9], [Infura][10] and so. Alchemy has [a list of 43 RCP Node Provders][11] for 2025. I'm using Infura for no particular reasons. Later on you'll agree that, for general use, they share more in common than they differ. Infura's [free plan][12] is more than enough for the intention of this blog. After you [create your first Infura API key][13], you are ready to go.
 
@@ -39,7 +39,7 @@ A private endpoint is usually provided by a RPC node provider such as [Alchemy][
 [^1]: Public endpoints are not used here because I feel they are often busy and impose a more strict rate limit for genernal use.
 [^2]: In this blog, I'll use library, SDK and framework interchangeably. But this is not 100% correct. For example, [Anchor][7] is Solana's official framework for building Solana smart contracts.
 
-As to the library/SDK, it is equally confusing because of too many choices. Basically, over the past few years, the most popular option is the now legacy (but still being used by many) [web3.js][27].  Its Python counterpart is [web3.py][28]. In particular, Solana has [solana/web3][38] to that end.  Now in 2026, as far as I know, the recommended options are as follows
+As to the library/SDK, it is equally confusing because of too many choices. Basically, over the past few years, the most popular option is the now legacy (but still being used by many) [web3.js][27].  Its Python counterpart is [web3.py][28]. In particular, Solana has [solana/web3.js][38] to that end.  Now in 2026, as far as I know, the recommended options are as follows
 
 1. For interacting with EVM chains, choose ethers.js, be it v5 or v6
 2. [Viem][39] is yet another option for Ethereum
@@ -112,7 +112,7 @@ Running the command and I got the below output (some folded for better display):
 [14]: https://bscscan.com/block/75757661
 [15]: https://bscscan.com/txs?block=75757661
 
-To get more information about method `eth_getBlockByNumber`, read [the doc for it][16] or [Infura's doc][17] .  For all available methods, see the [JSON API Reference][18] of Ethereum. You may want to try out methods like   `eth_getTransactionByHash` or `eth_getTransactionCount` (for fetching nonce).  **Note**, however, each such call will consume your daily credit attached to your API key. Infura has a [general review][19] for difference plans. As to this particular method, `eht_getBlockNumber`, it costs [80 credits][20]. [^3]
+To get more information about method `eth_getBlockByNumber`, read [the doc for it][16] or [Infura's doc][17] .  For all available methods, see the [JSON API Reference][18] of Ethereum. You may want to try out methods like   `eth_getTransactionByHash` or `eth_getTransactionCount` (for fetching nonce).  **Note**, however, each such call will consume your daily credit allocated to your API key. Infura has a [general review][19] for different plans. As to this particular method, `eht_getBlockNumber`, it costs [80 credits][20]. [^3]
 
 [16]: https://ethereum.github.io/execution-apis/api/methods/eth_getBlockByNumber
 [17]: https://docs.metamask.io/services/reference/bnb-smart-chain/json-rpc-methods/eth_getblockbynumber/
@@ -122,7 +122,7 @@ To get more information about method `eth_getBlockByNumber`, read [the doc for i
 
 [^3]: I'm afraid you'll need to get used to *tons* of references, urls, providers as well as hashes.
 
-Since all these RPC node providers are indeed compatible with Ethereum JSONRPC API, you can expect they have *similar* API docs. For example, NodeReal lists how many compute units[^4] [a method costs][21] when using its private endpoint. [Chiannodes's doc][22] shows what methods it supports, with explanation, for which (EVM-based) chain.
+Since all these RPC node providers are indeed compatible with Ethereum JSONRPC API, you can expect they have *similar* API docs. For example, NodeReal lists how many [compute units][21][^4] a method costs when using its private endpoint. [Chiannodes's doc][22] shows what methods it supports, with explanation, for which (EVM-based) chain.
 
 [21]: https://docs.nodereal.io/docs/compute-units-cus
 [22]: https://www.chainnodes.org/docs
