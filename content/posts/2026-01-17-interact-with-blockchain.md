@@ -10,7 +10,7 @@ My very first programming job was to develop dApps at [Race Protocol][1]. It is 
 [1]: https://github.com/RACE-Game
 
 ### Scan & Explorer
-You don't even need a wallet (or on-chain address/account) to start reading data (transactions, blocks, validators, etc) from a specific blockchain. The easiest way to do so immediately is use a corresponding scan or explorer, which is basically a web interface for viewing blockchain data within your browser: [Solscan][2] or [Explorer | Solana][3] for Solana, [Ethereum (ETH) Blochain Explorer][4] (aka Etherscan) for Ethereum, [BscScan][5] or [BSC Trace][6] for BNB Smart Chain, just to name a few. Whenever you want to inspect the data on a certain chain, you can directly use such a tool (if you know it already) or simply search for one with "XXX explorer", where "XXX" is the chain name.
+You don't even need a wallet (or on-chain address/account) to start reading data (transactions, blocks, validators, etc) from a specific blockchain. The easiest way to do so immediately is use a corresponding scan or explorer, which is basically a web interface for viewing blockchain data within your browser: [Solscan][2] or [Explorer | Solana][3] for Solana, [Ethereum (ETH) Blochain Explorer][4] (aka Etherscan) for Ethereum, [BscScan][5] or [BSC Trace][6] for BNB Smart Chain, just to name a few. Whenever you want to inspect the data on a certain chain, you can directly use such a tool (if you know one already) or simply search for one with "XXX explorer", where "XXX" is the chain name.
 
 [2]: https://solscan.io/
 [3]: https://explorer.solana.com/
@@ -18,9 +18,9 @@ You don't even need a wallet (or on-chain address/account) to start reading data
 [5]: https://bscscan.com/
 [6]: https://bsctrace.com/
 
-The above explorers, though quite useful most of the time, cannot fit in all use cases. For example, if you want to know, in a given time range, which transaction has the lowest gas or transaction fee. It is doable using a scan but it is tedious and error prone. Besides, as a programmer, you might already begin wondering: where do these explorers get the raw/source data for display? This brings us to the next topic.
+The above explorers, though quite useful most of the time, cannot fit in all use cases. For example, if you want to know, in a given time range, which transaction has the lowest gas or transaction fee. It is doable using a scan but it is also tedious and error prone. Besides, as a programmer, you might already begin wondering: where do these explorers get the raw/source data for display? This brings us to the next topic.
 
-### Library, framework, SDK, API Key
+### Library, framework, SDK, API Key, endpoints
 As you dive deeper into blockchain ecosystems, you are likely to access chain data programmatically. To do so, you'll need at least:
 
 1. A private or public[^1] endpoint, which is basically a URL that accepts HTTP(S) requests with JSON data
@@ -39,10 +39,18 @@ A private endpoint is usually provided by a RPC node provider such as [Alchemy][
 [^1]: Public endpoints are not used here because I feel they are often busy and impose a more strict rate limit for genernal use.
 [^2]: In this blog, I'll use library, SDK and framework interchangeably. But this is not 100% correct. For example, [Anchor][7] is Solana's official framework for building Solana smart contracts.
 
-There is also the legacy (but still being used by many) [web3.js][27]. Since I prefer Typescript and Rust, I won't cover any Python library (e.g. [web3.py][28]) in this blog.
+As to the library/SDK, it is equally confusing because of too many choices. Basically, over the past few years, the most popular option is the now legacy (but still being used by many) [web3.js][27].  Its Python counterpart is [web3.py][28]. In particular, Solana has [solana/web3][38] to that end.  Now in 2026, as far as I know, the recommended options are as follows
+
+1. For interacting with EVM chains, choose ethers.js, be it v5 or v6
+2. [Viem][39] is yet another option for Ethereum
+3. For interacting with Solana, choose solana/kit
+
+Since I prefer Typescript and Rust, I won't cover any Python library in this blog.
 
 [27]: https://github.com/web3/web3.js
 [28]: https://github.com/ethereum/web3.py
+[38]: https://www.npmjs.com/package/@solana/web3.js
+[39]: https://viem.sh/
 
 ### Read data from EVM chains on command line
 Let's take BNB Smart Chain for example. At the time of writing this line, the most recent block [75757661][14]. Open the block in BscScan, we can see it included [64 transactions][15], among other info. Now let's try to fetch the block info using command line
@@ -129,7 +137,7 @@ The latest release of `ethers.js` is [v6.16.0][23]. Yet for this blog I'm using 
 $ npm install -D ethers@5
 ```
 
-v6 has considerable breaking changes. If you do want to use v6, make sure you are referencing the [correct document][25]. At least at the time of writing this blog, google search lists the document for ethers v5 as the top result, as shown in the screenshot
+ethers.js v6 has a considerable number of breaking changes. If you do want to use v6, make sure you are referencing the [correct document][25]. Interesting enough, at the time of writing this blog, Google search lists the document for ethers v5 as the top result, even though it is marked with v6:
 
 ![Ethers v6 link directs to the v5 document](/img/ethers-confusion.png)
 
@@ -138,7 +146,7 @@ v6 has considerable breaking changes. If you do want to use v6, make sure you ar
 [25]: https://docs.ethers.org/v6/
 
 
-Using `ethers` to interact with EVM chains is pretty much like using `cURL`. The below function fetches the information for the given transaction hash on Ethereum (if `chain` is `undefined`) or on the passed chain.
+Using ethers.js to interact with EVM chains is pretty much like using `cURL`. The below function fetches the information for the given transaction hash on Ethereum (if `chain` is `undefined`) or on the passed chain.
 
 ```typescript
 export async function findTx(txHash: string, chain?: string) {
@@ -193,7 +201,7 @@ The `CHAINS_TO_IDS` and `INFURA_ENDPOINTS` are two constants defined elsewhere f
 ### Read data from Solana on command line
 Solana is rather different from EVM chains and has [its own command line tool][29]. But for reading data from Solana, you can still start with simple `curl` command.
 
-Let's try to do the same: get the latest block info. At the time of writing this line, the block height is [372240007][30]. Since Infura is mainly EVM-compatible chains, we need yet another provider. Again, for no particular reason, I choose Alchemy.
+Let's try to do the same: get the latest block info. At the time of writing this line, the block height is [372240007][30]. Since Infura focuses mainly on EVM-compatible chains, we need yet another provider. Again, for no particular reasons, I choose Alchemy.
 
 ```bash
 curl https://solana-mainnet.g.alchemy.com/v2/<YOUR-API-KEY> \
@@ -227,7 +235,7 @@ The output (folded for better display) is as follows
 }
 ```
 
-For detailed info about this method, visit [its document page][31]. Also Solana has great [interactive document] for all available methods. Similarly, Alchemy also [lists the compute units for all the methods it supports][33].
+For detailed info about this method, visit [its document page][31]. Also you can try out each method interactively on the very document page for that method. Similarly, Alchemy also [lists the compute units for all the methods it supports][33].
 
 
 [29]: https://solana.com/docs/intro/installation
@@ -237,7 +245,7 @@ For detailed info about this method, visit [its document page][31]. Also Solana 
 [33]: https://www.alchemy.com/docs/reference/compute-unit-costs#solana-standard-json-rpc-methods
 
 ### Read data from Solana using Solana Kit
-Solana sunsets web3.js in favor of Solana kit. The latter is more [modular][34] and [lightweight][35]. Solana also shows complete code with the Kit to get block info:
+Solana sunsets web3.js in favor of Solana kit. The latter is more [modular][34] and [lightweight][35]. Solana also shows complete code using kit to get a block's info:
 
 ```typescript
 import { createSolanaRpc } from "@solana/kit";
@@ -267,9 +275,9 @@ console.log("block:", block);
 [35]: https://github.com/anza-xyz/kit?tab=readme-ov-file#statistics
 
 
-Once you know how to read data from chains, you may want to begin sending transactions. To do so, besides an endpoint and a SDK, you will also need a wallet address. For EVM chains, the most popular choice is [Metamask][36] and for Solana, it is likely [Phantom][37].
+Once you know how to read data from chains, you may want to begin sending transactions. To do so, besides an endpoint and a SDK, you will also need a wallet address. For EVM chains, the most popular choice is [Metamask][36]; for Solana, it is likely [Phantom][37].
 
 [36]: https://metamask.io/
 [37]: https://phantom.com/
 
-It may be difficult to get some initial funds on the mainnets for these chains. But you can start with the devnets.  This may also be a good starting point to get into the world of DeFi. Like there are a great number of chains already, there also are many CEXs and DEXs. All these may serve as a topic for a future post.
+It may be difficult to get some initial funds on the mainnets for these chains. But you can start with the devnets.  In addition, this may be a good time to get into the world of DeFi. Like there are a great number of chains already, there are many CEXs and DEXs too. All these may serve as the topic for a future post.
