@@ -11,9 +11,9 @@ Prices for storage like RAM or hard drives have been roaring for a while, even t
 [3]: https://www.mi.com/global/product/xiaomi-book-14/
 [4]: https://www.amazon.sg/Beelink-PCIe4-0-2700MHz-HDMI2-1-Display/dp/B0GLZ5VFJB
 
-Since early 2021, I've been running Linux only on all my machines. I know what hardware to look for when purchasing a new machine. For example, I'll always prefer Intel wireless card to avoid the headache of finding barely-working open-sourced firmware for hardware that don't care much about Linux (e.g. Broadcom). This time there is no exception. SER8 ships an Intel AX200, one of my favorites (others being AX210 and AX201).
+Since early 2021, I've been running only Linux on all my machines. I know what hardware to look for when purchasing a new machine. For example, I'll always prefer Intel wireless card to avoid the headache of finding barely-working open-sourced firmware for hardware that don't care much about Linux (e.g. Broadcom). This time there is no exception. SER8 ships an Intel AX200, one of my favorites (others being AX210 and AX201).
 
-Because this time I already have a 1TB Samsung SSD with Arch Linux installed on it, I was expecting fast boot. I installed the SSD, plugged a USB installer, and started the new machine. The below error slashed among the startup logs:
+Because this time I already have a 1TB Samsung SSD with Arch Linux installed on it, I was expecting fast a boot. I installed the SSD, plugged a USB installer, and started the new machine. The below error slashed among the startup logs:
 
 ```
 [    3.354549] iwlwifi 0000:03:00.0: enabling device (0000 -> 0002)
